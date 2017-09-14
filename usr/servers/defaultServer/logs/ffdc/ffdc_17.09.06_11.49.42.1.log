@@ -1,0 +1,679 @@
+------Start of DE processing------ = [9/6/17 11:49:42:961 EDT]
+Exception = javax.servlet.ServletException
+Source = com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter
+probeid = 144
+Stack Dump = javax.servlet.ServletException: SRVE0207E: Uncaught initialization exception created by servlet
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.init(ServletWrapper.java:401)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:633)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:475)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:152)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:94)
+	at org.springframework.web.filter.ShallowEtagHeaderFilter.doFilterInternal(ShallowEtagHeaderFilter.java:110)
+	at com.uscs.ewms.common.security.HttpCacheFilter.doFilterInternal(HttpCacheFilter.java:19)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:207)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:91)
+	at com.uscs.ewms.common.security.EWMSLog4jUsernameFilter.doFilterInternal(EWMSLog4jUsernameFilter.java:35)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:207)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:207)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:91)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:1021)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1143)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:82)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:956)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:280)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:967)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:359)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:318)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:471)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:405)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:285)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.ready(HttpInboundLink.java:256)
+	at com.ibm.ws.tcpchannel.internal.NewConnectionInitialReadCallback.sendToDiscriminators(NewConnectionInitialReadCallback.java:174)
+	at com.ibm.ws.tcpchannel.internal.NewConnectionInitialReadCallback.complete(NewConnectionInitialReadCallback.java:83)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:504)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:574)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:929)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1018)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'apptStatisticsReportControllerHelper': Unsatisfied dependency expressed through field 'customerService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customerServiceImpl': Unsatisfied dependency expressed through field 'interfaceService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'interfaceServiceImpl': Unsatisfied dependency expressed through field 'errorManagementService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'errorManagementServiceImpl': Unsatisfied dependency expressed through field 'emailSender'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'emailSender': Unsatisfied dependency expressed through field 'mailSender'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mailSender' defined in class path resource [context/ewms-servlet.xml]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.mail.javamail.JavaMailSenderImpl]: Constructor threw exception; nested exception is java.lang.VerifyError: (class: javax/activation/FileTypeMap, method: getDefaultFileTypeMap signature: ()Ljavax/activation/FileTypeMap;) Bad type in putfield/putstatic
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:668)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:682)
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:553)
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:494)
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:171)
+	at javax.servlet.GenericServlet.init(GenericServlet.java:161)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.init(ServletWrapper.java:332)
+	... 71 more
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'customerServiceImpl': Unsatisfied dependency expressed through field 'interfaceService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'interfaceServiceImpl': Unsatisfied dependency expressed through field 'errorManagementService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'errorManagementServiceImpl': Unsatisfied dependency expressed through field 'emailSender'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'emailSender': Unsatisfied dependency expressed through field 'mailSender'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mailSender' defined in class path resource [context/ewms-servlet.xml]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.mail.javamail.JavaMailSenderImpl]: Constructor threw exception; nested exception is java.lang.VerifyError: (class: javax/activation/FileTypeMap, method: getDefaultFileTypeMap signature: ()Ljavax/activation/FileTypeMap;) Bad type in putfield/putstatic
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 91 more
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'interfaceServiceImpl': Unsatisfied dependency expressed through field 'errorManagementService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'errorManagementServiceImpl': Unsatisfied dependency expressed through field 'emailSender'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'emailSender': Unsatisfied dependency expressed through field 'mailSender'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mailSender' defined in class path resource [context/ewms-servlet.xml]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.mail.javamail.JavaMailSenderImpl]: Constructor threw exception; nested exception is java.lang.VerifyError: (class: javax/activation/FileTypeMap, method: getDefaultFileTypeMap signature: ()Ljavax/activation/FileTypeMap;) Bad type in putfield/putstatic
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 104 more
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'errorManagementServiceImpl': Unsatisfied dependency expressed through field 'emailSender'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'emailSender': Unsatisfied dependency expressed through field 'mailSender'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mailSender' defined in class path resource [context/ewms-servlet.xml]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.mail.javamail.JavaMailSenderImpl]: Constructor threw exception; nested exception is java.lang.VerifyError: (class: javax/activation/FileTypeMap, method: getDefaultFileTypeMap signature: ()Ljavax/activation/FileTypeMap;) Bad type in putfield/putstatic
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 117 more
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'emailSender': Unsatisfied dependency expressed through field 'mailSender'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mailSender' defined in class path resource [context/ewms-servlet.xml]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.mail.javamail.JavaMailSenderImpl]: Constructor threw exception; nested exception is java.lang.VerifyError: (class: javax/activation/FileTypeMap, method: getDefaultFileTypeMap signature: ()Ljavax/activation/FileTypeMap;) Bad type in putfield/putstatic
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 130 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mailSender' defined in class path resource [context/ewms-servlet.xml]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.mail.javamail.JavaMailSenderImpl]: Constructor threw exception; nested exception is java.lang.VerifyError: (class: javax/activation/FileTypeMap, method: getDefaultFileTypeMap signature: ()Ljavax/activation/FileTypeMap;) Bad type in putfield/putstatic
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1155)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1099)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 143 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.mail.javamail.JavaMailSenderImpl]: Constructor threw exception; nested exception is java.lang.VerifyError: (class: javax/activation/FileTypeMap, method: getDefaultFileTypeMap signature: ()Ljavax/activation/FileTypeMap;) Bad type in putfield/putstatic
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:154)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:89)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1147)
+	... 152 more
+Caused by: java.lang.VerifyError: (class: javax/activation/FileTypeMap, method: getDefaultFileTypeMap signature: ()Ljavax/activation/FileTypeMap;) Bad type in putfield/putstatic
+	at org.springframework.mail.javamail.JavaMailSenderImpl.<init>(JavaMailSenderImpl.java:104)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:142)
+	... 154 more
+
+Dump of callerThis
+Object type = com.ibm.ws.webcontainer.filter.FilterInstanceWrapper
+  FILTER_STATE_UNINITIALIZED = 0
+  FILTER_STATE_INITIALIZING = 1
+  FILTER_STATE_AVAILABLE = 2
+  FILTER_STATE_DESTROYING = 3
+  FILTER_STATE_DESTROYED = 4
+  FILTER_STATE_UNAVAILABLE = 5
+  _filterName = "etagFilter"
+  _filterInstance = class com.uscs.ewms.common.security.HttpCacheFilter@16c0b891
+    HEADER_ETAG = "ETag"
+    HEADER_IF_NONE_MATCH = "If-None-Match"
+    HEADER_CACHE_CONTROL = "Cache-Control"
+    DIRECTIVE_NO_STORE = "no-store"
+    STREAMING_ATTRIBUTE = "org.springframework.web.filter.ShallowEtagHeaderFilter.STREAMING"
+    servlet3Present = true
+    writeWeakETag = false
+    ALREADY_FILTERED_SUFFIX = ".FILTERED"
+    logger = class org.apache.commons.logging.impl.Log4JLogger@5fc4f939
+      serialVersionUID = 5160705895411730424
+      FQCN = "org.apache.commons.logging.impl.Log4JLogger"
+      logger = class org.apache.log4j.Logger@3caa9fce
+      name = "com.uscs.ewms.common.security.HttpCacheFilter"
+      traceLevel = class org.apache.log4j.Level@2a0716bc
+      class$org$apache$commons$logging$impl$Log4JLogger = class java.lang.Class@51717ad9
+      class$org$apache$log4j$Level = class java.lang.Class@30314a5b
+      class$org$apache$log4j$Priority = class java.lang.Class@2dbf75d1
+    beanName = null
+    environment = null
+    servletContext = null
+    filterConfig = class com.ibm.ws.webcontainer.filter.FilterConfig@165b820a
+    requiredProperties = class java.util.HashSet@15ccc437
+      serialVersionUID = -5024744406713321676
+      map = class java.util.HashMap@7f163dfe
+      PRESENT = class java.lang.Object@4159b140
+      MAX_ARRAY_SIZE = 2147483639
+  _filterState = 2
+  nServicing = class java.util.concurrent.atomic.AtomicInteger@3642f877
+    serialVersionUID = 6214790243416807050
+    unsafe = class sun.misc.Unsafe@4a152202
+      theUnsafe = class sun.misc.Unsafe@4a152202
+      INVALID_FIELD_OFFSET = -1
+      ARRAY_BOOLEAN_BASE_OFFSET = 16
+      ARRAY_BYTE_BASE_OFFSET = 16
+      ARRAY_SHORT_BASE_OFFSET = 16
+      ARRAY_CHAR_BASE_OFFSET = 16
+      ARRAY_INT_BASE_OFFSET = 16
+      ARRAY_LONG_BASE_OFFSET = 16
+      ARRAY_FLOAT_BASE_OFFSET = 16
+      ARRAY_DOUBLE_BASE_OFFSET = 16
+      ARRAY_OBJECT_BASE_OFFSET = 16
+      ARRAY_BOOLEAN_INDEX_SCALE = 1
+      ARRAY_BYTE_INDEX_SCALE = 1
+      ARRAY_SHORT_INDEX_SCALE = 2
+      ARRAY_CHAR_INDEX_SCALE = 2
+      ARRAY_INT_INDEX_SCALE = 4
+      ARRAY_LONG_INDEX_SCALE = 8
+      ARRAY_FLOAT_INDEX_SCALE = 4
+      ARRAY_DOUBLE_INDEX_SCALE = 8
+      ARRAY_OBJECT_INDEX_SCALE = 4
+      ADDRESS_SIZE = 8
+    valueOffset = 12
+    value = 0
+    serialVersionUID = -8742448824652078965
+  logger = class com.ibm.ws.logging.internal.WsLogger@23de5573
+    tc = class com.ibm.websphere.ras.TraceComponent@1d7931d6
+      strings[0] = "TraceComponent[com.ibm.ws.logging.internal.WsLogger,class com.ibm.ws.logging.internal.WsLogger,[logging],com.ibm.ws.logging.internal.resources.LoggingMessages,null]"
+    ivCachedResourceBundleName = null
+    ivCachedResourceBundle = null
+    ivComponent = null
+    ivOrganization = null
+    ivProduct = null
+    ivMinimumLocalizationLevelIntValue = 625
+    ivTC = class com.ibm.websphere.ras.TraceComponent@269a7cf6
+      strings[0] = "TraceComponent[com.ibm.ws.webcontainer.filter,class com.ibm.wsspi.webcontainer.logging.LoggerFactory$1,[com.ibm.ws.webcontainer.filter],null,null]"
+    loggerRegistrationComponent = class java.lang.ThreadLocal@20d3d72
+      threadLocalHashCode = 1675452296
+      nextHashCode = class java.util.concurrent.atomic.AtomicInteger@306550fa
+      HASH_INCREMENT = 1640531527
+    emptyHandlers = class java.util.logging.Handler[0]
+    offValue = 2147483647
+    SYSTEM_LOGGER_RB_NAME = "sun.util.logging.resources.logging"
+    SYSTEM_BUNDLE = class java.util.logging.Logger$LoggerBundle@4cee5fce
+      resourceBundleName = "sun.util.logging.resources.logging"
+      userBundle = null
+    NO_RESOURCE_BUNDLE = class java.util.logging.Logger$LoggerBundle@6e683dfc
+      resourceBundleName = null
+      userBundle = null
+    manager = class com.ibm.ws.kernel.boot.logging.WsLogManager@5c103591
+      CLASS_NAME = "com.ibm.ws.kernel.boot.logging.WsLogManager"
+      CONFIGURE_BY_SERVER_PROPERTY_NAME = "java.util.logging.configureByServer"
+      CONFIGURE_BY_LOGGING_PROPERTIES_FILE = "java.util.logging.configureByLoggingPropertiesFile"
+      configureByServer = true
+      configureByLoggingProperties = false
+      wsLogger = class java.lang.reflect.Constructor@7ef5d3ff
+      resetEnabled = true
+      manager = class com.ibm.ws.kernel.boot.logging.WsLogManager@5c103591
+      props = class java.util.Properties@6804577c
+      defaultLevel = class java.util.logging.Level@4a882a0c
+      listenerMap = class java.util.HashMap@727c3806
+      systemContext = class java.util.logging.LogManager$SystemLoggerContext@3304a888
+      userContext = class java.util.logging.LogManager$LoggerContext@633eff3c
+      rootLogger = class java.util.logging.LogManager$RootLogger@29cbeb90
+      readPrimordialConfiguration = true
+      initializedGlobalHandlers = true
+      deathImminent = false
+      initializedCalled = true
+      initializationDone = true
+      contextsMap = null
+      loggerRefQueue = class java.lang.ref.ReferenceQueue@3a644aa7
+      MAX_ITERATIONS = 400
+      controlPermission = class java.util.logging.LoggingPermission@2cb2f58b
+      loggingMXBean = null
+      LOGGING_MXBEAN_NAME = "java.util.logging:type=Logging"
+      $assertionsDisabled = true
+    name = "com.ibm.ws.webcontainer.filter"
+    handlers = class java.util.concurrent.CopyOnWriteArrayList@2552dec2
+      serialVersionUID = 8673264195747942595
+      lock = class java.util.concurrent.locks.ReentrantLock@a9c4ac1
+      array = class java.lang.Object[0]
+      UNSAFE = class sun.misc.Unsafe@4a152202
+      lockOffset = 12
+    loggerBundle = class java.util.logging.Logger$LoggerBundle@3d56648f
+      resourceBundleName = "com.ibm.ws.webcontainer.resources.Messages"
+      userBundle = null
+    useParentHandlers = true
+    filter = null
+    anonymous = false
+    catalog = class com.ibm.ws.webcontainer.resources.Messages@7562f9
+      resources = class [Ljava.lang.Object;[332]
+      lookup = class java.util.HashMap@37f7583c
+      INITIAL_CACHE_SIZE = 32
+      NONEXISTENT_BUNDLE = class java.util.ResourceBundle$1@1d1ede34
+      cacheList = class java.util.concurrent.ConcurrentHashMap@390ad6fe
+      referenceQueue = class java.lang.ref.ReferenceQueue@729f195
+      parent = null
+      locale = class java.util.Locale@74f2479c
+      name = "com.ibm.ws.webcontainer.resources.Messages"
+      expired = false
+      cacheKey = class java.util.ResourceBundle$CacheKey@114817b2
+      keySet = null
+      providers = null
+      $assertionsDisabled = true
+    catalogName = "com.ibm.ws.webcontainer.resources.Messages"
+    catalogLocale = class java.util.Locale@7bfa0236
+      LOCALECACHE = class java.util.Locale$Cache@502028ac
+      ENGLISH = class java.util.Locale@f54bc0
+      FRENCH = class java.util.Locale@14c1c07d
+      GERMAN = class java.util.Locale@7eb360f6
+      ITALIAN = class java.util.Locale@2f8742c4
+      JAPANESE = class java.util.Locale@586a7bf
+      KOREAN = class java.util.Locale@1fde5d5a
+      CHINESE = class java.util.Locale@7a8f3a87
+      SIMPLIFIED_CHINESE = class java.util.Locale@6f0bd670
+      TRADITIONAL_CHINESE = class java.util.Locale@5f002f71
+      FRANCE = class java.util.Locale@32d99d46
+      GERMANY = class java.util.Locale@3101d298
+      ITALY = class java.util.Locale@83a9e
+      JAPAN = class java.util.Locale@5e2df649
+      KOREA = class java.util.Locale@20607367
+      CHINA = class java.util.Locale@6f0bd670
+      PRC = class java.util.Locale@6f0bd670
+      TAIWAN = class java.util.Locale@5f002f71
+      UK = class java.util.Locale@1fcae0e1
+      US = class java.util.Locale@7bfa0236
+      CANADA = class java.util.Locale@5ed7e54c
+      CANADA_FRENCH = class java.util.Locale@6ff9cf61
+      ROOT = class java.util.Locale@74f2479c
+      PRIVATE_USE_EXTENSION = x
+      UNICODE_LOCALE_EXTENSION = u
+      serialVersionUID = 9149081749638150636
+      DISPLAY_LANGUAGE = 0
+      DISPLAY_COUNTRY = 1
+      DISPLAY_VARIANT = 2
+      DISPLAY_SCRIPT = 3
+      baseLocale = class sun.util.locale.BaseLocale@4a44e2f
+      localeExtensions = null
+      hashCodeValue = 96636889
+      defaultLocale = class java.util.Locale@7bfa0236
+      defaultDisplayLocale = null
+      defaultFormatLocale = class java.util.Locale@7bfa0236
+      languageTag = "en-US"
+      serialPersistentFields = class java.io.ObjectStreamField[6]
+      isoLanguages = null
+      isoCountries = null
+      $assertionsDisabled = true
+    treeLock = class java.lang.Object@27152b80
+    parent = class com.ibm.ws.logging.internal.WsLogger@34535680
+      tc = class com.ibm.websphere.ras.TraceComponent@1d7931d6
+      ivCachedResourceBundleName = "com.ibm.ws.webcontainer.resources.Messages"
+      ivCachedResourceBundle = class com.ibm.ws.webcontainer.resources.Messages@261b17d9
+      ivComponent = null
+      ivOrganization = null
+      ivProduct = null
+      ivMinimumLocalizationLevelIntValue = 625
+      ivTC = class com.ibm.websphere.ras.TraceComponent@6bf42466
+      loggerRegistrationComponent = class java.lang.ThreadLocal@20d3d72
+      emptyHandlers = class java.util.logging.Handler[0]
+      offValue = 2147483647
+      SYSTEM_LOGGER_RB_NAME = "sun.util.logging.resources.logging"
+      SYSTEM_BUNDLE = class java.util.logging.Logger$LoggerBundle@4cee5fce
+      NO_RESOURCE_BUNDLE = class java.util.logging.Logger$LoggerBundle@6e683dfc
+      manager = class com.ibm.ws.kernel.boot.logging.WsLogManager@5c103591
+      name = "com.ibm.ws.webcontainer"
+      handlers = class java.util.concurrent.CopyOnWriteArrayList@259bc2c4
+      loggerBundle = class java.util.logging.Logger$LoggerBundle@1b4ebb3
+      useParentHandlers = true
+      filter = null
+      anonymous = false
+      catalog = class com.ibm.ws.webcontainer.resources.Messages@261b17d9
+      catalogName = "com.ibm.ws.webcontainer.resources.Messages"
+      catalogLocale = class java.util.Locale@7bfa0236
+      treeLock = class java.lang.Object@27152b80
+      parent = class java.util.logging.Logger@152afa4c
+      kids = class java.util.ArrayList@1e4bfc91
+      levelObject = class java.util.logging.Level@4a882a0c
+      levelValue = 800
+      callersClassLoaderRef = class java.lang.ref.WeakReference@5cec2bd9
+      isSystemLogger = false
+      GLOBAL_LOGGER_NAME = "global"
+      global = class java.util.logging.Logger@41c6b87c
+      $assertionsDisabled = true
+    kids = null
+    levelObject = class java.util.logging.Level@4a882a0c
+      defaultBundle = "sun.util.logging.resources.logging"
+      name = "INFO"
+      value = 800
+      resourceBundleName = "sun.util.logging.resources.logging"
+      localizedLevelName = "INFO"
+      cachedLocale = class java.util.Locale@7bfa0236
+      OFF = class java.util.logging.Level@4e00d3c9
+      SEVERE = class java.util.logging.Level@56a989dc
+      WARNING = class java.util.logging.Level@6d0c302f
+      INFO = class java.util.logging.Level@4a882a0c
+      CONFIG = class java.util.logging.Level@5c1dd568
+      FINE = class java.util.logging.Level@144bcbb9
+      FINER = class java.util.logging.Level@eb64785
+      FINEST = class java.util.logging.Level@2b78334
+      ALL = class java.util.logging.Level@3033b09f
+      serialVersionUID = -8176160795706313070
+    levelValue = 800
+    callersClassLoaderRef = class java.lang.ref.WeakReference@70811fa6
+      referent = class org.eclipse.osgi.internal.loader.EquinoxClassLoader@6e8ff877
+      queue = class java.lang.ref.ReferenceQueue$Null@271a5f62
+      next = null
+      discovered = null
+      lock = class java.lang.ref.Reference$Lock@155d141
+      pending = null
+    isSystemLogger = false
+    GLOBAL_LOGGER_NAME = "global"
+    global = class java.util.logging.Logger@41c6b87c
+      emptyHandlers = class java.util.logging.Handler[0]
+      offValue = 2147483647
+      SYSTEM_LOGGER_RB_NAME = "sun.util.logging.resources.logging"
+      SYSTEM_BUNDLE = class java.util.logging.Logger$LoggerBundle@4cee5fce
+      NO_RESOURCE_BUNDLE = class java.util.logging.Logger$LoggerBundle@6e683dfc
+      manager = class com.ibm.ws.kernel.boot.logging.WsLogManager@5c103591
+      name = "global"
+      handlers = class java.util.concurrent.CopyOnWriteArrayList@6f1d5e35
+      loggerBundle = class java.util.logging.Logger$LoggerBundle@6e683dfc
+      useParentHandlers = true
+      filter = null
+      anonymous = false
+      catalog = null
+      catalogName = null
+      catalogLocale = null
+      treeLock = class java.lang.Object@27152b80
+      parent = class java.util.logging.LogManager$RootLogger@29cbeb90
+      kids = null
+      levelObject = null
+      levelValue = 800
+      callersClassLoaderRef = null
+      isSystemLogger = true
+      GLOBAL_LOGGER_NAME = "global"
+      global = class java.util.logging.Logger@41c6b87c
+      $assertionsDisabled = true
+    $assertionsDisabled = true
+  CLASS_NAME = "com.ibm.ws.webcontainer.filter.FilterInstanceWrapper"
+  _filterEvent = null
+  _filterConfig = class com.ibm.ws.webcontainer.filter.FilterConfig@165b820a
+    tc = class com.ibm.websphere.ras.TraceComponent@9ebfe8
+      strings[0] = "TraceComponent[com.ibm.ws.webcontainer.filter.FilterConfig,class com.ibm.ws.webcontainer.filter.FilterConfig,[webcontainer],com.ibm.ws.webcontainer.resources.LShimMessages,null]"
+    dispatchMode = null
+    filterClassLoader = null
+    isInternal = false
+    webAppConfig = class com.ibm.ws.webcontainer.osgi.webapp.WebAppConfiguration@d952aee
+      webModuleMetaData = class com.ibm.ws.webcontainer.osgi.metadata.WebModuleMetaDataImpl@2c9ce855
+      webComponentMetaData = class com.ibm.ws.webcontainer.osgi.metadata.WebComponentMetaDataImpl@680177d2
+      dVirtualHost = class com.ibm.ws.webcontainer.osgi.DynamicVirtualHost@59edbeea
+      orderedLibPaths = class java.util.Collections$UnmodifiableRandomAccessList@11afd498
+      bundleHeaders = null
+      cdiEnabled = false
+      CLASS_NAME = "com.ibm.ws.webcontainer.webapp.WebAppConfiguration"
+      logger = class com.ibm.ws.logging.internal.WsLogger@3e2b4c77
+      tc = class com.ibm.websphere.ras.TraceComponent@236b4786
+      nls = class com.ibm.ejs.ras.TraceNLS@15eee8c9
+      version = 30
+      contextRoot = "/web"
+      sessionTimeout = 120
+      moduleSessionTimeoutSet = true
+      moduleSessionTrackingModeSet = false
+      sessionCookieConfig = class com.ibm.ws.session.SessionCookieConfigImpl@5dfd7a8e
+      hasProgrammaticCookieConfig = false
+      sessionDefaultTrackingModeSet = class java.util.RegularEnumSet@6db48cf7
+      sessionManagerConfig = class com.ibm.ws.session.SessionManagerConfig@34687759
+      displayName = "USCS.eWMS"
+      description = null
+      reloadInterval = 0
+      distributable = true
+      denyUncoveredHttpMethods = false
+      reloadingEnabled = false
+      serveServletsByClassnameEnabled = false
+      defaultErrorPage = null
+      additionalClassPath = null
+      fileServingEnabled = null
+      directoryBrowsingEnabled = false
+      autoRequestEncoding = false
+      autoResponseEncoding = false
+      autoLoadFilters = false
+      requestListeners = null
+      requestAttributeListeners = null
+      sessionListeners = null
+      localeMap = null
+      moduleName = "web"
+      j2eeModuleName = "web.war"
+      moduleId = null
+      isSyncToThreadEnabled = false
+      encodeDispatchedRequestURI = false
+      isSystemApp = false
+      ardEnabled = false
+      ardDispatchType = null
+      listeners = class java.util.ArrayList@e68c974
+      welcomeFileList = class java.util.ArrayList@6ca2d0d0
+      servletMappings = class java.util.HashMap@5abdeec0
+      lastIndexBeforeDeclaredFilters = 0
+      filterMappings = class java.util.ArrayList@13271254
+      servletInfo = class java.util.HashMap@5bcc4a2d
+      filterInfo = class java.util.HashMap@211235d4
+      mimeMappings = class java.util.HashMap@14ec04d8
+      mimeFilters = null
+      isMimeFilteringEnabled = false
+      theWebGroup = null
+      jspAttributes = class java.util.HashMap@3ff211a3
+      fileServingAttributes = class java.util.HashMap@656a952
+      invokerAttributes = class java.util.HashMap@36da80d9
+      contextParams = class java.util.HashMap@42e4881e
+      virtualHost = "default_host"
+      exceptionErrorPages = class java.util.HashMap@6d34e6e8
+      codeErrorPages = class java.util.HashMap@5e9bce25
+      tagLibList = null
+      precompileJsps = false
+      webApp = class com.ibm.ws.webcontainer.osgi.webapp.WebApp@93482a3
+      virtualHostList = class java.util.Collections$EmptyList@3ca54167
+      appStartupWeight = 0
+      moduleStartupWeight = 0
+      metaDataComplete = false
+      classesToScan = class java.util.ArrayList@5ae79a95
+      uriFilterMappingInfos = class java.util.ArrayList@6cd62b08
+      servletFilterMappingInfos = null
+      dynamicServletRegistrationMap = null
+      applicationName = "web"
+      libBinPathList = null
+      webXmlDefinedListeners = class java.util.HashSet@102e2487
+      allRefs = class java.util.EnumMap@10c42a41
+      allRefBindings = class java.util.EnumMap@67cff47
+      envEntryValues = class java.util.HashMap@60a9fe2f
+      resourceRefConfigList = null
+      disallowAllFileServingProp = "false"
+      disallowServeServletsByClassnameProp = "true"
+      disableStaticMappingCache = false
+      jspCachedLocations = class java.util.HashMap@1c2f4a1
+      primedSTSHeader = "NoValue"
+      enablemultireadofpostdata = false
+      _id = "WebAppGeneratedId1"
+      _attributes = null
+      serialVersionUID = 7511545662945734886
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@16a6eeb6
+    filter = null
+    filterClass = null
+    urlPatternMappings = class java.util.ArrayList@196b5280
+      serialVersionUID = 8683452581122892189
+      DEFAULT_CAPACITY = 10
+      EMPTY_ELEMENTDATA = class java.lang.Object[0]
+      DEFAULTCAPACITY_EMPTY_ELEMENTDATA = class java.lang.Object[0]
+      elementData = class java.lang.Object[10]
+      size = 1
+      MAX_ARRAY_SIZE = 2147483639
+      modCount = 1
+      MAX_ARRAY_SIZE = 2147483639
+    servletNameMappings = null
+    nls = class com.ibm.ejs.ras.TraceNLS@747d8fa3
+      resolver = class com.ibm.ws.logging.internal.TraceNLSResolver@723e3a8
+      finder = class com.ibm.ws.logging.internal.StackFinder@147cf42d
+      ivBundleName = "com.ibm.ws.webcontainer.resources.Messages"
+      caller = class java.lang.Class@17db27d6
+    logger = class com.ibm.ws.logging.internal.WsLogger@6382a0f0
+      tc = class com.ibm.websphere.ras.TraceComponent@1d7931d6
+      ivCachedResourceBundleName = "com.ibm.ws.webcontainer.resources.Messages"
+      ivCachedResourceBundle = class com.ibm.ws.webcontainer.resources.Messages@261b17d9
+      ivComponent = null
+      ivOrganization = null
+      ivProduct = null
+      ivMinimumLocalizationLevelIntValue = 625
+      ivTC = class com.ibm.websphere.ras.TraceComponent@743c40f1
+      loggerRegistrationComponent = class java.lang.ThreadLocal@20d3d72
+      emptyHandlers = class java.util.logging.Handler[0]
+      offValue = 2147483647
+      SYSTEM_LOGGER_RB_NAME = "sun.util.logging.resources.logging"
+      SYSTEM_BUNDLE = class java.util.logging.Logger$LoggerBundle@4cee5fce
+      NO_RESOURCE_BUNDLE = class java.util.logging.Logger$LoggerBundle@6e683dfc
+      manager = class com.ibm.ws.kernel.boot.logging.WsLogManager@5c103591
+      name = "com.ibm.ws.webcontainer.servlet"
+      handlers = class java.util.concurrent.CopyOnWriteArrayList@371d65cc
+      loggerBundle = class java.util.logging.Logger$LoggerBundle@9b35cce
+      useParentHandlers = true
+      filter = null
+      anonymous = false
+      catalog = class com.ibm.ws.webcontainer.resources.Messages@261b17d9
+      catalogName = "com.ibm.ws.webcontainer.resources.Messages"
+      catalogLocale = class java.util.Locale@7bfa0236
+      treeLock = class java.lang.Object@27152b80
+      parent = class com.ibm.ws.logging.internal.WsLogger@34535680
+      kids = null
+      levelObject = class java.util.logging.Level@4a882a0c
+      levelValue = 800
+      callersClassLoaderRef = class java.lang.ref.WeakReference@6f8f145b
+      isSystemLogger = false
+      GLOBAL_LOGGER_NAME = "global"
+      global = class java.util.logging.Logger@41c6b87c
+      $assertionsDisabled = true
+    CLASS_NAME = "com.ibm.ws.webcontainer.servlet.TargetConfig"
+    initParams = null
+    fileName = null
+    displayName = "FilterGeneratedId4"
+    name = "etagFilter"
+    description = null
+    smallIcon = null
+    largeIcon = null
+    context = class com.ibm.wsspi.webcontainer.facade.ServletContextFacade@51f6a27e
+      context = class com.ibm.ws.webcontainer.osgi.webapp.WebApp@93482a3
+    className = "com.uscs.ewms.common.security.HttpCacheFilter"
+    asyncSupported = false
+    _id = "FilterGeneratedId4"
+    _attributes = null
+    serialVersionUID = 7511545662945734886
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@16a6eeb6
+      strings[0] = "TraceComponent[com.ibm.ws.container.BaseConfiguration,class com.ibm.ws.container.BaseConfiguration,[],null,null]"
+  _eventSource = class com.ibm.ws.webcontainer.webapp.WebAppEventSource@603b7353
+    _invocationListeners = class com.ibm.ws.webcontainer.util.EventListeners@5f548f6d
+      EMPTY_LISTENERS = interface java.util.EventListener[0]
+      logger = class com.ibm.ws.logging.internal.WsLogger@2411ae04
+      CLASS_NAME = "com.ibm.ws.webcontainer.util.EventListeners"
+      listeners = interface java.util.EventListener[0]
+    _servletListeners = class com.ibm.ws.webcontainer.util.EventListeners@7c7eb4e3
+      EMPTY_LISTENERS = interface java.util.EventListener[0]
+      logger = class com.ibm.ws.logging.internal.WsLogger@2411ae04
+      CLASS_NAME = "com.ibm.ws.webcontainer.util.EventListeners"
+      listeners = interface java.util.EventListener[0]
+    _errorListeners = class com.ibm.ws.webcontainer.util.EventListeners@69c2c1a3
+      EMPTY_LISTENERS = interface java.util.EventListener[0]
+      logger = class com.ibm.ws.logging.internal.WsLogger@2411ae04
+      CLASS_NAME = "com.ibm.ws.webcontainer.util.EventListeners"
+      listeners = interface java.util.EventListener[0]
+    _applicationListeners = class com.ibm.ws.webcontainer.util.EventListeners@44415b38
+      EMPTY_LISTENERS = interface java.util.EventListener[0]
+      logger = class com.ibm.ws.logging.internal.WsLogger@2411ae04
+      CLASS_NAME = "com.ibm.ws.webcontainer.util.EventListeners"
+      listeners = interface java.util.EventListener[0]
+    _filterInvocationListeners = class com.ibm.ws.webcontainer.util.EventListeners@3f158b3a
+      EMPTY_LISTENERS = interface java.util.EventListener[0]
+      logger = class com.ibm.ws.logging.internal.WsLogger@2411ae04
+      CLASS_NAME = "com.ibm.ws.webcontainer.util.EventListeners"
+      listeners = interface java.util.EventListener[0]
+    _filterListeners = class com.ibm.ws.webcontainer.util.EventListeners@3645e997
+      EMPTY_LISTENERS = interface java.util.EventListener[0]
+      logger = class com.ibm.ws.logging.internal.WsLogger@2411ae04
+      CLASS_NAME = "com.ibm.ws.webcontainer.util.EventListeners"
+      listeners = interface java.util.EventListener[0]
+    _filterErrorListeners = class com.ibm.ws.webcontainer.util.EventListeners@4975f925
+      EMPTY_LISTENERS = interface java.util.EventListener[0]
+      logger = class com.ibm.ws.logging.internal.WsLogger@2411ae04
+      CLASS_NAME = "com.ibm.ws.webcontainer.util.EventListeners"
+      listeners = interface java.util.EventListener[0]
+  _managedObject = class com.ibm.ws.managedobject.internal.ManagedObjectImpl@1d2a225e
+    object = "<sensitive com.uscs.ewms.common.security.HttpCacheFilter@16c0b891>"
+    serialVersionUID = -5603642874755101089
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@4bf8f6f8
+      strings[0] = "TraceComponent[com.ibm.ws.managedobject.internal.ManagedObjectImpl,class com.ibm.ws.managedobject.internal.ManagedObjectImpl,[],null,null]"
+

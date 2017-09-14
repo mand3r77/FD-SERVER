@@ -1,0 +1,159 @@
+------Start of DE processing------ = [9/7/17 14:37:06:901 EDT]
+Exception = javax.resource.spi.ResourceAllocationException
+Source = com.ibm.ws.rsadapter.jdbc.WSJdbcDataSource.getConnection
+probeid = 299
+Stack Dump = javax.resource.spi.ResourceAllocationException: DSRA8100E: Unable to get a XAConnection from the DataSource. with SQL State : 08001 SQL Code : -99999
+	at com.ibm.ejs.j2c.FreePool.createManagedConnectionWithMCWrapper(FreePool.java:1562)
+	at com.ibm.ejs.j2c.FreePool.createOrWaitForConnection(FreePool.java:1230)
+	at com.ibm.ejs.j2c.PoolManager.reserve(PoolManager.java:1440)
+	at com.ibm.ejs.j2c.ConnectionManager.allocateMCWrapper(ConnectionManager.java:600)
+	at com.ibm.ejs.j2c.ConnectionManager.allocateConnection(ConnectionManager.java:312)
+	at com.ibm.ws.rsadapter.jdbc.WSJdbcDataSource.getConnection(WSJdbcDataSource.java:186)
+	at com.ibm.ws.rsadapter.jdbc.WSJdbcDataSource.getConnection(WSJdbcDataSource.java:159)
+	at org.apache.ibatis.mapping.DefaultDatabaseIdProvider.getDatabaseProductName(DefaultDatabaseIdProvider.java:63)
+	at org.apache.ibatis.mapping.DefaultDatabaseIdProvider.getDatabaseName(DefaultDatabaseIdProvider.java:53)
+	at org.apache.ibatis.mapping.DefaultDatabaseIdProvider.getDatabaseId(DefaultDatabaseIdProvider.java:41)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:395)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:295)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1531)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1276)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getTypeForFactoryBean(AbstractBeanFactory.java:1508)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryBean(AbstractAutowireCapableBeanFactory.java:816)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isTypeMatch(AbstractBeanFactory.java:558)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:432)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:403)
+	at org.springframework.beans.factory.BeanFactoryUtils.beanNamesForTypeIncludingAncestors(BeanFactoryUtils.java:220)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1267)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1101)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:443)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:325)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at com.ibm.ws.webcontainer.webapp.WebApp.notifyServletContextCreated(WebApp.java:2428)
+	at com.ibm.ws.webcontainer.webapp.WebApp.initialize(WebApp.java:1065)
+	at com.ibm.ws.webcontainer.webapp.WebApp.initialize(WebApp.java:6595)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost.startWebApp(DynamicVirtualHost.java:468)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost.startWebApplication(DynamicVirtualHost.java:463)
+	at com.ibm.ws.webcontainer.osgi.WebContainer.startWebApplication(WebContainer.java:1120)
+	at com.ibm.ws.webcontainer.osgi.WebContainer.access$000(WebContainer.java:104)
+	at com.ibm.ws.webcontainer.osgi.WebContainer$2.run(WebContainer.java:932)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLException: The application requester cannot establish the connection. (DEVDB2.USCOLD.COM) DSRA0010E: SQL State = 08001, Error Code = -99,999
+	at com.ibm.as400.access.JDError.createSQLExceptionSubClass(JDError.java:830)
+	at com.ibm.as400.access.JDError.throwSQLException(JDError.java:559)
+	at com.ibm.as400.access.AS400JDBCConnection.setProperties(AS400JDBCConnection.java:3391)
+	at com.ibm.as400.access.AS400JDBCDataSource.getConnection(AS400JDBCDataSource.java:756)
+	at com.ibm.as400.access.AS400JDBCDataSource.getConnection(AS400JDBCDataSource.java:614)
+	at com.ibm.as400.access.AS400JDBCXADataSource.getXAConnection(AS400JDBCXADataSource.java:128)
+	at com.ibm.ws.rsadapter.impl.DatabaseHelper$1.run(DatabaseHelper.java:950)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.ibm.ws.rsadapter.impl.DatabaseHelper.getPooledConnection(DatabaseHelper.java:962)
+	at com.ibm.ws.rsadapter.impl.WSManagedConnectionFactoryImpl.getConnection(WSManagedConnectionFactoryImpl.java:794)
+	at com.ibm.ws.rsadapter.impl.WSManagedConnectionFactoryImpl.createManagedConnection(WSManagedConnectionFactoryImpl.java:650)
+	at com.ibm.ejs.j2c.FreePool.createManagedConnectionWithMCWrapper(FreePool.java:1356)
+	... 66 more
+Caused by: java.net.UnknownHostException: DEVDB2.USCOLD.COM
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.ibm.as400.access.PortMapper.getSocketConnection(PortMapper.java:266)
+	at com.ibm.as400.access.PortMapper.getServerSocket(PortMapper.java:161)
+	at com.ibm.as400.access.AS400ImplRemote.signonConnect(AS400ImplRemote.java:2588)
+	at com.ibm.as400.access.AS400ImplRemote.signon(AS400ImplRemote.java:2503)
+	at com.ibm.as400.access.AS400.sendSignonRequest(AS400.java:3351)
+	at com.ibm.as400.access.AS400.promptSignon(AS400.java:2915)
+	at com.ibm.as400.access.AS400.signon(AS400.java:4246)
+	at com.ibm.as400.access.AS400.connectService(AS400.java:1336)
+	at com.ibm.as400.access.AS400JDBCConnection.setProperties(AS400JDBCConnection.java:3383)
+	... 75 more
+
+Dump of callerThis
+Object type = com.ibm.ws.rsadapter.jdbc.WSJdbcDataSource
+  strings[0] = "_______________________________________________________________________"
+  strings[1] = ""
+  strings[2] = "    First Failure Data Capture information for"
+  strings[3] = "          com.ibm.ws.rsadapter.jdbc.WSJdbcDataSource@784270d7"
+  strings[4] = "_______________________________________________________________________"
+  strings[5] = ""
+  strings[6] = "ResourceRefInfo:"
+  strings[7] = "  
+[Resource-ref CMConfigData key items]
+
+	res-sharing-scope:        0 (SHAREABLE)
+	res-isolation-level:      0 (TRANSACTION_NONE)
+	res-auth:                 1 (APPLICATION)
+	commitPriority            0
+	branchCoupling            -1
+	loginConfigurationName:   null
+	loginConfigProperties:    null
+	Resource ref name:        not set
+
+"
+  strings[8] = "Current Configuration ID: 1
+"
+  strings[9] = "Connection Manager:"
+  strings[10] = "  [ConnectionManager]@17d4e2c
+JNDI Name <jdbc/ewms>
+shareable <true>
+
+"
+  strings[11] = "_______________________________________________________________________"
+  strings[12] = ""
+  strings[13] = "    First Failure Data Capture information for"
+  strings[14] = "          com.ibm.ws.rsadapter.impl.WSManagedConnectionFactoryImpl@1c5e89fe"
+  strings[15] = "_______________________________________________________________________"
+  strings[16] = ""
+  strings[17] = "com.ibm.ws.rsadapter.DSConfig@4b21cbcb"
+  strings[18] = "[beginTranForResultSetScrollingAPIs, false, beginTranForVendorAPIs, true, commitOrRollbackOnCleanup, null, connectionSharing, MatchOriginalRequest, isolationLevel, 2, jndiName, jdbc/ewms, enableConnectionCasting, false, queryTimeout, null, statementCacheSize, 10, supplementalJDBCTrace, null, syncQueryTimeoutWithTransactionTimeout, false, transactional, true]"
+  strings[19] = "[com.ibm.ws.classloading.internal.AppClassLoader@26a09139, true, false, interface javax.sql.XADataSource]"
+  strings[20] = "{extendedDynamic=false, cursorHold=false, secure=false, password=******, translateHex=character, packageCriteria=default, lazyClose=false, translateBinary=false, queryOptimizeGoal=0, maximumScale=31, rollbackCursorHold=false, fullOpen=true, sort=hex, blockSize=32, holdStatements=false, driver=toolbox, packageCCSID=13488, naming=sql, threadUsed=true, metaDataSource=1, errors=basic, savePasswordWhenSerialized=******, cursorSensitivity=asensitive, access=all, packageAdd=true, dataTruncation=true, prefetch=true, serverName=DEVDB2.USCOLD.COM, xaLooselyCoupledSupport=0, packageCache=false, packageError=warning, minimumDivideScale=0, translateBoolean=true, extendedMetaData=false, trueAutoCommit=false, isolationLevelSwitchingSupport=false, bigDecimal=true, packageLibrary=QGPL, lobThreshold=0, bidiImplicitReordering=true, serverTraceCategories=0, dataCompression=true, maximumPrecision=31, blockCriteria=2, holdInputLocators=true, bidiNumericOrdering=false, user=EWMDEVDB2, prompt=true, remarks=system}"
+  strings[21] = "DataSource Implementation Class:"
+  strings[22] = "  class com.ibm.as400.access.AS400JDBCXADataSource
+"
+  strings[23] = "Underlying DataSource Object: com.ibm.as400.access.AS400JDBCXADataSource@42c23151"
+  strings[24] = "  
+"
+  strings[25] = "Log Writer:"
+  strings[26] = "  null
+"
+  strings[27] = "Counter of fatal connection errors on ManagedConnections created by this MCF:"
+  strings[28] = "  0
+"
+

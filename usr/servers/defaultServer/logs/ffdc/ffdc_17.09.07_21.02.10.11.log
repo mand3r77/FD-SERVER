@@ -1,0 +1,322 @@
+------Start of DE processing------ = [9/7/17 21:02:10:793 EDT]
+Exception = java.sql.SQLException
+Source = com.ibm.ws.rsadapter.impl.WSRdbManagedConnectionImpl.clearStatementCache
+probeid = 2169
+Stack Dump = java.sql.SQLException: The connection does not exist.
+	at com.ibm.as400.access.JDError.createSQLExceptionSubClass(JDError.java:830)
+	at com.ibm.as400.access.JDError.throwSQLException(JDError.java:418)
+	at com.ibm.as400.access.AS400JDBCConnection.checkOpen(AS400JDBCConnection.java:496)
+	at com.ibm.as400.access.AS400JDBCConnection.send(AS400JDBCConnection.java:2733)
+	at com.ibm.as400.access.AS400JDBCConnection.send(AS400JDBCConnection.java:2708)
+	at com.ibm.as400.access.AS400JDBCPreparedStatement.close(AS400JDBCPreparedStatement.java:661)
+	at com.ibm.ws.rsadapter.impl.WSRdbManagedConnectionImpl.clearStatementCache(WSRdbManagedConnectionImpl.java:3323)
+	at com.ibm.ws.rsadapter.impl.WSRdbManagedConnectionImpl.destroy(WSRdbManagedConnectionImpl.java:2488)
+	at com.ibm.ejs.j2c.MCWrapper.destroy(MCWrapper.java:1714)
+	at com.ibm.ejs.j2c.FreePool.cleanupAndDestroyMCWrapper(FreePool.java:460)
+	at com.ibm.ejs.j2c.FreePool.returnToFreePool(FreePool.java:260)
+	at com.ibm.ejs.j2c.PoolManager.release(PoolManager.java:965)
+	at com.ibm.ejs.j2c.MCWrapper.releaseToPoolManager(MCWrapper.java:2090)
+	at com.ibm.ejs.j2c.XATransactionWrapper.afterCompletion(XATransactionWrapper.java:259)
+	at com.ibm.tx.jta.impl.RegisteredSyncs.coreDistributeAfter(RegisteredSyncs.java:359)
+	at com.ibm.tx.jta.impl.RegisteredSyncs.distributeAfter(RegisteredSyncs.java:334)
+	at com.ibm.tx.jta.embeddable.impl.EmbeddableTransactionImpl.distributeAfter(EmbeddableTransactionImpl.java:346)
+	at com.ibm.tx.jta.impl.TransactionImpl.postCompletion(TransactionImpl.java:2807)
+	at com.ibm.tx.jta.impl.TransactionImpl.internalRollback(TransactionImpl.java:1907)
+	at com.ibm.tx.jta.impl.TransactionImpl.internalRollback(TransactionImpl.java:1858)
+	at com.ibm.tx.jta.impl.TransactionImpl.rollback(TransactionImpl.java:1329)
+	at com.ibm.tx.jta.impl.TranManagerImpl.rollback(TranManagerImpl.java:267)
+	at com.ibm.tx.jta.impl.TranManagerSet.rollback(TranManagerSet.java:216)
+	at com.ibm.ws.uow.embeddable.EmbeddableUOWManagerImpl.uowRollback(EmbeddableUOWManagerImpl.java:895)
+	at com.ibm.ws.uow.embeddable.EmbeddableUOWManagerImpl.uowEnd(EmbeddableUOWManagerImpl.java:831)
+	at com.ibm.ws.uow.embeddable.EmbeddableUOWManagerImpl.runUnderNewUOW(EmbeddableUOWManagerImpl.java:793)
+	at com.ibm.ws.uow.embeddable.EmbeddableUOWManagerImpl.runUnderUOW(EmbeddableUOWManagerImpl.java:368)
+	at org.springframework.transaction.jta.WebSphereUowTransactionManager.execute(WebSphereUowTransactionManager.java:290)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:299)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:168)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85)
+	at com.uscs.ewms.logging.LoggingAspect.log(LoggingAspect.java:30)
+	at sun.reflect.GeneratedMethodAccessor117.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:629)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:618)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:168)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy102.unclokRecordTimed(Unknown Source)
+	at com.uscs.ewms.scheduler.service.AppLockScheduleBean.clearLocks(AppLockScheduleBean.java:30)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+Dump of callerThis
+Object type = com.ibm.ws.rsadapter.impl.WSRdbManagedConnectionImpl
+  strings[0] = "_______________________________________________________________________"
+  strings[1] = ""
+  strings[2] = "    First Failure Data Capture information for"
+  strings[3] = "          com.ibm.ws.rsadapter.impl.WSRdbManagedConnectionImpl@524b6866"
+  strings[4] = "_______________________________________________________________________"
+  strings[5] = ""
+  strings[6] = "TWO PHASE ENABLED
+"
+  strings[7] = "Connection sharing: "
+  strings[8] = "  MatchOriginalRequest
+"
+  strings[9] = "Transaction State:"
+  strings[10] = "  NO_TRANSACTION_ACTIVE
+"
+  strings[11] = "Key:"
+  strings[12] = "  [B@521329b6
+"
+  strings[13] = "Log Writer:"
+  strings[14] = "  null
+"
+  strings[15] = "Subject:"
+  strings[16] = "  null
+"
+  strings[17] = "ManagedConnection:"
+  strings[18] = "  WSRdbManagedConnectionImpl@524b6866
+"
+  strings[19] = "Counter of fatal connection errors for the ManagedConnectionFactory as of the most recent getConnection on this ManagedConnection:"
+  strings[20] = "  1
+"
+  strings[21] = "Default AutoCommit:"
+  strings[22] = "  true
+"
+  strings[23] = "Current AutoCommit:"
+  strings[24] = "  true
+"
+  strings[25] = "Current Isolation:"
+  strings[26] = "  READ COMMITTED (2)
+"
+  strings[27] = "Isolation level has changed? :"
+  strings[28] = "  false
+"
+  strings[29] = "Support isolation level switching: "
+  strings[30] = "  false
+"
+  strings[31] = "The gssCredential is: 
+"
+  strings[32] = "null
+"
+  strings[33] = "The gssName is: 
+"
+  strings[34] = "null
+"
+  strings[35] = "Catalog, IsReadOnly, TypeMap, Schema, or NetworkTimeout has changed? :"
+  strings[36] = "  false
+"
+  strings[37] = "Default Holdability:"
+  strings[38] = "  CLOSE CURSORS AT COMMIT (2)
+"
+  strings[39] = "Current Holdability:"
+  strings[40] = "  CLOSE CURSORS AT COMMIT (2)
+"
+  strings[41] = "Holdability value has changed? :"
+  strings[42] = "  false
+"
+  strings[43] = "Thread ID:"
+  strings[44] = "  null
+"
+  strings[45] = "Lazily enlisted in the current transaction? :"
+  strings[46] = "  false
+"
+  strings[47] = "Underlying Connection Object: com.ibm.as400.access.AS400JDBCConnectionHandle@765b78c1"
+  strings[48] = "  DEVDB2
+"
+  strings[49] = "Underlying PooledConnection Object: com.ibm.as400.access.AS400JDBCXAConnection@123422c5"
+  strings[50] = "  com.ibm.as400.access.AS400JDBCXAConnection@6452dc64
+"
+  strings[51] = "SQLJ Default Context: null"
+  strings[52] = "  null
+"
+  strings[53] = "Fatal connection error was detected? :"
+  strings[54] = "  true
+"
+  strings[55] = "Currently cleaning up handles? :"
+  strings[56] = "  false
+"
+  strings[57] = "Last ConnectionEvent sent for this ManagedConnection:
+"
+  strings[58] = "  com.ibm.ws.rsadapter.impl.WSConnectionEvent@13862c82"
+  strings[59] = "  Connection Handle: com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@3bdd65d5"
+  strings[60] = "  Event ID: CONNECTION CLOSED (1)"
+  strings[61] = "  Exception: null"
+  strings[62] = ""
+  strings[63] = "Connection Event Listeners:
+"
+  strings[64] = ""
+  strings[65] = "Maximum Handle List Size: 15
+"
+  strings[66] = "Handle Count: 0
+"
+  strings[67] = "Handles:
+"
+  strings[68] = "  null"
+  strings[69] = "  null"
+  strings[70] = "  null"
+  strings[71] = "  null"
+  strings[72] = "  null"
+  strings[73] = "  null"
+  strings[74] = "  null"
+  strings[75] = "  null"
+  strings[76] = "  null"
+  strings[77] = "  null"
+  strings[78] = "  null"
+  strings[79] = "  null"
+  strings[80] = "  null"
+  strings[81] = "  null"
+  strings[82] = "  null"
+  strings[83] = ""
+  strings[84] = "State Manager:"
+  strings[85] = "  com.ibm.ws.rsadapter.impl.WSStateManager@64f2ff6d
+"
+  strings[86] = "_______________________________________________________________________"
+  strings[87] = ""
+  strings[88] = "    First Failure Data Capture information for"
+  strings[89] = "          com.ibm.ws.rsadapter.impl.WSRdbXaResourceImpl@73ce4fbe"
+  strings[90] = "_______________________________________________________________________"
+  strings[91] = ""
+  strings[92] = "ManagedConnection:"
+  strings[93] = "  WSRdbManagedConnectionImpl@524b6866
+"
+  strings[94] = "Underlying XAResource Object: com.ibm.as400.access.AS400JDBCXAResource@23e8af2f"
+  strings[95] = "  DEVDB2-XA:RMID#49155
+"
+  strings[96] = "Xid: "
+  strings[97] = "  com.ibm.tx.jta.impl.XidImpl@4e5d9c53
+                                 {XidImpl: formatId(57415344), gtrid_length(36), bqual_length(54),
+data(0000015e5f02283d00000005768a9f5c35665c3b469f84e49debb5243c3c7dda1a40edd20000015e5f02283d00000005768a9f5c35665c3b469f84e49debb5243c3c7dda1a40edd2000000010000000000000000000000000001)}
+                                 Global Transaction ID: 00 00 01 5e 5f 02 28 3d 00 00 00 05 76 8a 9f 5c 35 66 5c 3b 46 9f 84 e4 9d eb b5 24 3c 3c 7d da 1a 40 ed d2 
+                                 Branch Qualifier:      00 00 01 5e 5f 02 28 3d 00 00 00 05 76 8a 9f 5c 35 66 5c 3b 46 9f 84 e4 9d eb b5 24 3c 3c 7d da 1a 40 ed d2 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 01 
+                                 Format ID:             1463898948
+"
+  strings[98] = "_______________________________________________________________________"
+  strings[99] = ""
+  strings[100] = "    First Failure Data Capture information for"
+  strings[101] = "          com.ibm.ws.rsadapter.impl.WSRdbSpiLocalTransactionImpl@19f07e0c"
+  strings[102] = "_______________________________________________________________________"
+  strings[103] = ""
+  strings[104] = "Connection:"
+  strings[105] = "  com.ibm.as400.access.AS400JDBCConnectionHandle@765b78c1
+"
+  strings[106] = "ManagedConnection:"
+  strings[107] = "  WSRdbManagedConnectionImpl@524b6866
+"
+  strings[108] = "Statement Cache:"
+  strings[109] = "  
+com.ibm.ws.rsadapter.impl.CacheMap@6a0ae3c8
+Number of entries:   0
+Maximum entries:     10
+Number of buckets:   13
+Maximum bucket size: 5
+Number of discards:  11
+
+BUCKET SIZE PREV NEXT
+  000  000  013  013
+  001  000  013  013
+  002  000  013  013
+  003  000  013  013
+  004  000  013  013
+  005  000  013  013
+  006  000  013  013
+  007  000  013  013
+  008  000  013  013
+  009  000  013  013
+  010  000  013  013
+  011  000  013  013
+  012  000  013  013
+  013  LRU       013
+  014  MRU  013
+
+"
+  strings[110] = "_______________________________________________________________________"
+  strings[111] = ""
+  strings[112] = "    First Failure Data Capture information for"
+  strings[113] = "          com.ibm.ws.rsadapter.impl.WSConnectionRequestInfoImpl@77e20a1e"
+  strings[114] = "_______________________________________________________________________"
+  strings[115] = ""
+  changable CRI = ""
+  strings[117] = "  true
+"
+  strings[118] = "User Name:"
+  strings[119] = "  null
+"
+  strings[120] = "Password:"
+  strings[121] = "  null
+"
+  strings[122] = "Isolation Level:"
+  strings[123] = "  READ COMMITTED (2)
+"
+  strings[124] = "Catalog:"
+  strings[125] = "  null
+"
+  strings[126] = "Schema:"
+  strings[127] = "  null
+"
+  strings[128] = "Is Read Only?"
+  strings[129] = "  null
+"
+  strings[130] = "Type Map:"
+  strings[131] = "  null
+"
+  strings[132] = "Cursor Holdability:"
+  strings[133] = "  DEFAULT CURSOR HOLDABILITY VALUE (0)
+"
+  strings[134] = "Config ID: 1
+"
+  strings[135] = "Hash Code:"
+  strings[136] = "  1
+"
+  strings[137] = "Support isolation switching on connection:"
+  strings[138] = "  false
+"
+  gssName = "
+"
+  strings[140] = "null
+"
+  gssCredential = "
+"
+  strings[142] = "null
+"
+  oracle properties = "
+"
+  strings[144] = "null
+"
+  strings[145] = "_______________________________________________________________________"
+  strings[146] = ""
+  strings[147] = "    First Failure Data Capture information for"
+  strings[148] = "          com.ibm.ws.rsadapter.impl.WSManagedConnectionFactoryImpl@1c5e89fe"
+  strings[149] = "_______________________________________________________________________"
+  strings[150] = ""
+  strings[151] = "com.ibm.ws.rsadapter.DSConfig@4b21cbcb"
+  strings[152] = "[beginTranForResultSetScrollingAPIs, false, beginTranForVendorAPIs, true, commitOrRollbackOnCleanup, null, connectionSharing, MatchOriginalRequest, isolationLevel, 2, jndiName, jdbc/ewms, enableConnectionCasting, false, queryTimeout, null, statementCacheSize, 10, supplementalJDBCTrace, null, syncQueryTimeoutWithTransactionTimeout, false, transactional, true]"
+  strings[153] = "[com.ibm.ws.classloading.internal.AppClassLoader@26a09139, true, false, interface javax.sql.XADataSource]"
+  strings[154] = "{extendedDynamic=false, cursorHold=false, secure=false, password=******, translateHex=character, packageCriteria=default, lazyClose=false, translateBinary=false, queryOptimizeGoal=0, maximumScale=31, rollbackCursorHold=false, fullOpen=true, sort=hex, blockSize=32, holdStatements=false, driver=toolbox, packageCCSID=13488, naming=sql, threadUsed=true, metaDataSource=1, errors=basic, savePasswordWhenSerialized=******, cursorSensitivity=asensitive, access=all, packageAdd=true, dataTruncation=true, prefetch=true, serverName=DEVDB2.USCOLD.COM, xaLooselyCoupledSupport=0, packageCache=false, packageError=warning, minimumDivideScale=0, translateBoolean=true, extendedMetaData=false, trueAutoCommit=false, isolationLevelSwitchingSupport=false, bigDecimal=true, packageLibrary=QGPL, lobThreshold=0, bidiImplicitReordering=true, serverTraceCategories=0, dataCompression=true, maximumPrecision=31, blockCriteria=2, holdInputLocators=true, bidiNumericOrdering=false, user=EWMDEVDB2, prompt=true, remarks=system}"
+  strings[155] = "DataSource Implementation Class:"
+  strings[156] = "  class com.ibm.as400.access.AS400JDBCXADataSource
+"
+  strings[157] = "Underlying DataSource Object: com.ibm.as400.access.AS400JDBCXADataSource@42c23151"
+  strings[158] = "  
+"
+  strings[159] = "Log Writer:"
+  strings[160] = "  null
+"
+  strings[161] = "Counter of fatal connection errors on ManagedConnections created by this MCF:"
+  strings[162] = "  1
+"
+

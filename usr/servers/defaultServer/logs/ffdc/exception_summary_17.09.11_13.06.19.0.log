@@ -1,0 +1,6 @@
+
+ Index  Count  Time of first Occurrence    Time of last Occurrence     Exception SourceId ProbeId
+------+------+---------------------------+---------------------------+---------------------------
+     0      5    9/11/17 13:06:19:321 EDT    9/11/17 13:36:29:347 EDT javax.transaction.RollbackException com.ibm.ws.spi.uow.UOWManagerImpl.runUnderNewUOW 175
+                                                                            - C:\EWM_\EWM-BE-SERVER\usr\servers\defaultServer\logs\ffdc\ffdc_17.09.11_13.06.19.0.log
+------+------+---------------------------+---------------------------+---------------------------

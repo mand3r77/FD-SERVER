@@ -1,0 +1,343 @@
+------Start of DE processing------ = [9/7/17 21:02:10:498 EDT]
+Exception = javax.transaction.xa.XAException
+Source = com.ibm.ws.rsadapter.spi.WSRdbXaResourceImpl.start
+probeid = 639
+Stack Dump = javax.transaction.xa.XAException
+	at com.ibm.as400.access.AS400JDBCXAResource.throwXAException(AS400JDBCXAResource.java:970)
+	at com.ibm.as400.access.AS400JDBCXAResource.start(AS400JDBCXAResource.java:938)
+	at com.ibm.ws.rsadapter.impl.WSRdbXaResourceImpl.start(WSRdbXaResourceImpl.java:1087)
+	at com.ibm.ejs.j2c.XATransactionWrapper.start(XATransactionWrapper.java:976)
+	at com.ibm.ws.Transaction.JTA.JTAResourceBase.start(JTAResourceBase.java:157)
+	at com.ibm.tx.jta.impl.RegisteredResources.startRes(RegisteredResources.java:1000)
+	at com.ibm.tx.jta.impl.RegisteredResources.enlistResource(RegisteredResources.java:642)
+	at com.ibm.tx.jta.impl.TransactionImpl.enlistResource(TransactionImpl.java:2362)
+	at com.ibm.tx.jta.embeddable.impl.EmbeddableTranManagerSet.enlist(EmbeddableTranManagerSet.java:157)
+	at com.ibm.ws.transaction.services.TransactionManagerService.enlist(TransactionManagerService.java:357)
+	at com.ibm.ejs.j2c.XATransactionWrapper.enlist(XATransactionWrapper.java:464)
+	at com.ibm.ejs.j2c.ConnectionManager.lazyEnlist(ConnectionManager.java:1256)
+	at com.ibm.ws.rsadapter.impl.WSRdbManagedConnectionImpl.lazyEnlist(WSRdbManagedConnectionImpl.java:1820)
+	at com.ibm.ws.rsadapter.jdbc.WSJdbcConnection.beginTransactionIfNecessary(WSJdbcConnection.java:394)
+	at com.ibm.ws.rsadapter.jdbc.WSJdbcConnection.prepareStatement(WSJdbcConnection.java:2184)
+	at com.ibm.ws.rsadapter.jdbc.WSJdbcConnection.prepareStatement(WSJdbcConnection.java:2154)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$1.doPrepare(StatementPreparerImpl.java:98)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:182)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareStatement(StatementPreparerImpl.java:91)
+	at org.hibernate.hql.internal.ast.exec.BasicExecutor.execute(BasicExecutor.java:90)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.executeUpdate(QueryTranslatorImpl.java:413)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.performExecuteUpdate(HQLQueryPlan.java:282)
+	at org.hibernate.internal.SessionImpl.executeUpdate(SessionImpl.java:1290)
+	at org.hibernate.internal.QueryImpl.executeUpdate(QueryImpl.java:116)
+	at com.uscs.ewms.mdm.dao.LockingInterceptorDAOImpl.removeAllOldLocks(LockingInterceptorDAOImpl.java:127)
+	at com.uscs.ewms.common.locking.service.LockInterceptorServiceImpl.unclokRecordTimed(LockInterceptorServiceImpl.java:101)
+	at sun.reflect.GeneratedMethodAccessor161.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport$1.doInTransaction(TransactionAspectSupport.java:305)
+	at org.springframework.transaction.jta.WebSphereUowTransactionManager$UOWActionAdapter.run(WebSphereUowTransactionManager.java:347)
+	at com.ibm.ws.uow.embeddable.EmbeddableUOWManagerImpl.runUnderNewUOW(EmbeddableUOWManagerImpl.java:775)
+	at com.ibm.ws.uow.embeddable.EmbeddableUOWManagerImpl.runUnderUOW(EmbeddableUOWManagerImpl.java:368)
+	at org.springframework.transaction.jta.WebSphereUowTransactionManager.execute(WebSphereUowTransactionManager.java:290)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:299)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:168)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85)
+	at com.uscs.ewms.logging.LoggingAspect.log(LoggingAspect.java:30)
+	at sun.reflect.GeneratedMethodAccessor117.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:629)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:618)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:168)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy102.unclokRecordTimed(Unknown Source)
+	at com.uscs.ewms.scheduler.service.AppLockScheduleBean.clearLocks(AppLockScheduleBean.java:30)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+Dump of callerThis
+Object type = com.ibm.ws.rsadapter.impl.WSRdbXaResourceImpl
+  strings[0] = "_______________________________________________________________________"
+  strings[1] = ""
+  strings[2] = "    First Failure Data Capture information for"
+  strings[3] = "          com.ibm.ws.rsadapter.impl.WSRdbManagedConnectionImpl@524b6866"
+  strings[4] = "_______________________________________________________________________"
+  strings[5] = ""
+  strings[6] = "TWO PHASE ENABLED
+"
+  strings[7] = "Connection sharing: "
+  strings[8] = "  MatchOriginalRequest
+"
+  strings[9] = "Transaction State:"
+  strings[10] = "  NO_TRANSACTION_ACTIVE
+"
+  strings[11] = "Key:"
+  strings[12] = "  [B@521329b6
+"
+  strings[13] = "Log Writer:"
+  strings[14] = "  null
+"
+  strings[15] = "Subject:"
+  strings[16] = "  null
+"
+  strings[17] = "ManagedConnection:"
+  strings[18] = "  WSRdbManagedConnectionImpl@524b6866
+"
+  strings[19] = "Counter of fatal connection errors for the ManagedConnectionFactory as of the most recent getConnection on this ManagedConnection:"
+  strings[20] = "  0
+"
+  strings[21] = "Default AutoCommit:"
+  strings[22] = "  true
+"
+  strings[23] = "Current AutoCommit:"
+  strings[24] = "  true
+"
+  strings[25] = "Current Isolation:"
+  strings[26] = "  READ COMMITTED (2)
+"
+  strings[27] = "Isolation level has changed? :"
+  strings[28] = "  false
+"
+  strings[29] = "Support isolation level switching: "
+  strings[30] = "  false
+"
+  strings[31] = "The gssCredential is: 
+"
+  strings[32] = "null
+"
+  strings[33] = "The gssName is: 
+"
+  strings[34] = "null
+"
+  strings[35] = "Catalog, IsReadOnly, TypeMap, Schema, or NetworkTimeout has changed? :"
+  strings[36] = "  false
+"
+  strings[37] = "Default Holdability:"
+  strings[38] = "  CLOSE CURSORS AT COMMIT (2)
+"
+  strings[39] = "Current Holdability:"
+  strings[40] = "  CLOSE CURSORS AT COMMIT (2)
+"
+  strings[41] = "Holdability value has changed? :"
+  strings[42] = "  false
+"
+  strings[43] = "Thread ID:"
+  strings[44] = "  null
+"
+  strings[45] = "Lazily enlisted in the current transaction? :"
+  strings[46] = "  false
+"
+  strings[47] = "Underlying Connection Object: com.ibm.as400.access.AS400JDBCConnectionHandle@765b78c1"
+  strings[48] = "  DEVDB2
+"
+  strings[49] = "Underlying PooledConnection Object: com.ibm.as400.access.AS400JDBCXAConnection@123422c5"
+  strings[50] = "  com.ibm.as400.access.AS400JDBCXAConnection@6452dc64
+"
+  strings[51] = "SQLJ Default Context: null"
+  strings[52] = "  null
+"
+  strings[53] = "Fatal connection error was detected? :"
+  strings[54] = "  false
+"
+  strings[55] = "Currently cleaning up handles? :"
+  strings[56] = "  false
+"
+  strings[57] = "Last ConnectionEvent sent for this ManagedConnection:
+"
+  strings[58] = "  com.ibm.ws.rsadapter.impl.WSConnectionEvent@13862c82"
+  strings[59] = "  Connection Handle: com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@5813e9dd"
+  strings[60] = "  Event ID: CONNECTION CLOSED (1)"
+  strings[61] = "  Exception: null"
+  strings[62] = ""
+  strings[63] = "Connection Event Listeners:
+"
+  strings[64] = "  com.ibm.ejs.j2c.ConnectionEventListener@75a31f6e"
+  strings[65] = ""
+  strings[66] = "Maximum Handle List Size: 15
+"
+  strings[67] = "Handle Count: 1
+"
+  strings[68] = "Handles:
+"
+  strings[69] = "  com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@46322915"
+  strings[70] = "  null"
+  strings[71] = "  null"
+  strings[72] = "  null"
+  strings[73] = "  null"
+  strings[74] = "  null"
+  strings[75] = "  null"
+  strings[76] = "  null"
+  strings[77] = "  null"
+  strings[78] = "  null"
+  strings[79] = "  null"
+  strings[80] = "  null"
+  strings[81] = "  null"
+  strings[82] = "  null"
+  strings[83] = "  null"
+  strings[84] = ""
+  strings[85] = "State Manager:"
+  strings[86] = "  com.ibm.ws.rsadapter.impl.WSStateManager@64f2ff6d
+"
+  strings[87] = "_______________________________________________________________________"
+  strings[88] = ""
+  strings[89] = "    First Failure Data Capture information for"
+  strings[90] = "          com.ibm.ws.rsadapter.impl.WSRdbXaResourceImpl@73ce4fbe"
+  strings[91] = "_______________________________________________________________________"
+  strings[92] = ""
+  strings[93] = "ManagedConnection:"
+  strings[94] = "  WSRdbManagedConnectionImpl@524b6866
+"
+  strings[95] = "Underlying XAResource Object: com.ibm.as400.access.AS400JDBCXAResource@23e8af2f"
+  strings[96] = "  DEVDB2-XA:RMID#49155
+"
+  strings[97] = "Xid: "
+  strings[98] = "  com.ibm.tx.jta.impl.XidImpl@4e5d9c53
+                                 {XidImpl: formatId(57415344), gtrid_length(36), bqual_length(54),
+data(0000015e5f02283d00000005768a9f5c35665c3b469f84e49debb5243c3c7dda1a40edd20000015e5f02283d00000005768a9f5c35665c3b469f84e49debb5243c3c7dda1a40edd2000000010000000000000000000000000001)}
+                                 Global Transaction ID: 00 00 01 5e 5f 02 28 3d 00 00 00 05 76 8a 9f 5c 35 66 5c 3b 46 9f 84 e4 9d eb b5 24 3c 3c 7d da 1a 40 ed d2 
+                                 Branch Qualifier:      00 00 01 5e 5f 02 28 3d 00 00 00 05 76 8a 9f 5c 35 66 5c 3b 46 9f 84 e4 9d eb b5 24 3c 3c 7d da 1a 40 ed d2 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 01 
+                                 Format ID:             1463898948
+"
+  strings[99] = "_______________________________________________________________________"
+  strings[100] = ""
+  strings[101] = "    First Failure Data Capture information for"
+  strings[102] = "          com.ibm.ws.rsadapter.impl.WSRdbSpiLocalTransactionImpl@19f07e0c"
+  strings[103] = "_______________________________________________________________________"
+  strings[104] = ""
+  strings[105] = "Connection:"
+  strings[106] = "  com.ibm.as400.access.AS400JDBCConnectionHandle@765b78c1
+"
+  strings[107] = "ManagedConnection:"
+  strings[108] = "  WSRdbManagedConnectionImpl@524b6866
+"
+  strings[109] = "Statement Cache:"
+    
+com.ibm.ws.rsadapter.impl.CacheMap@6a0ae3c8
+Number of entries:   10
+Maximum entries:     10
+Number of buckets:   13
+Maximum bucket size: 5
+Number of discards:  11
+
+BUCKET SIZE PREV NEXT
+  000  001  010  004
+                      cfdb871 PSTMT: select userinterf1_.USER_INTRFC_SYSID as col_0_0_, userinterf1_.USER_INTRFC_GRID_SYSID as col_1_0_ from MIGSRCINN.USER_INTRFC userinterf0_, MIGSRCINN.USER_INTRFC_GRID userinterf1_ where userinterf0_.USER_INTRFC_SYSID=userinterf1_.USER_INTRFC_SYSID and userinterf0_.USER_INTRFC_TECH_NAME=? and userinterf1_.GRID_NAME=? 1003 1007 2 0 2
+  001  001  011  006
+                      2e6012b9 PSTMT: SELECT FILTERSRC.*, COUNT(DISTINCT taskNo) over() as totalRecordCounts FROM ( SELECT DISTINCT  CASE WHEN NOTES_FLAG = "1 AND DISPLAY_RF_EXISTANCE = 1 AND RF_TYPE_EXISTANCE = 1 AND RF_TYPE_EXISTANCE = 1 THEN 1 else 0 end   as taskNote ,taskNo,taskNoSysId,  CASE WHEN COUNT( DISTINCT coalesce (SHIPDATE,CURRENT TIMESTAMP) ) OVER (PARTITION BY TASKNO)>1 then null else SHIPDATE END as shipDate ,  SUM(CUBE) OVER (PARTITION BY TASKNO) as cube ,  CASE WHEN COUNT( DISTINCT coalesce (CUSTSYSID,0) ) OVER (PARTITION BY TASKNO)>1 then null else CUSTSYSID END as custSysId ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(CUSTNO),'') ) OVER (PARTITION BY TASKNO)>1 then null else CUSTNO END as custNo ,  CASE WHEN COUNT( DISTINCT coalesce (DTORRECIEPTNO,0) ) OVER (PARTITION BY TASKNO)>1 then null else DTORRECIEPTNO END as dtORRecieptNo ,  CASE WHEN COUNT( DISTINCT coalesce (DLVRYTICKETSYSID,0) ) OVER (PARTITION BY TASKNO)>1 then null else DLVRYTICKETSYSID END as dlvryTicketSysId ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(TASKTYPE),'') ) OVER (PARTITION BY TASKNO)>1 then null else TASKTYPE END as taskType ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(QTY),'')) OVER (PARTITION BY TASKNO)>1 then sum(CAST(Coalesce(NullIf(rtrim(QTY),''),'0') As int)) OVER (PARTITION BY TASKNO) else varchar(NullIf(rtrim(QTY),'')) END as qty ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(STATUS),'')) OVER (PARTITION BY TASKNO)>1 then null else STATUS END as status ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(TASKSTATUSDESC),'') ) OVER (PARTITION BY TASKNO)>1 then null else TASKSTATUSDESC END as taskStatusDesc ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(TASKTYPEDESC),'')) OVER (PARTITION BY TASKNO)>1 then null else TASKTYPEDESC END as taskTypeDesc ,  CASE WHEN COUNT( DISTINCT coalesce (USERID,0)) OVER (PARTITION BY TASKNO)>1 then null else USERID END as userId ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(USERNAME),'')) OVER (PARTITION BY TASKNO)>1 then null else USERNAME END as userName ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(TASKPRIORITY),'')) OVER (PARTITION BY TASKNO)>1 then null else TASKPRIORITY END as taskPriority ,  CASE WHEN COUNT( DISTINCT coalesce (DOCKSYSID,0)) OVER (PARTITION BY TASKNO)>1 then null else DOCKSYSID END as dockSysId ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(DOCKID),'')) OVER (PARTITION BY TASKNO)>1 then null else DOCKID END as dockId ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(DOORLANE),'')) OVER (PARTITION BY TASKNO)>1 then null else DOORLANE END as doorLane ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(WORKORDERNO),'')) OVER (PARTITION BY TASKNO)>1 then null else WORKORDERNO END as workOrderNo ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(FROMLOC),'')) OVER (PARTITION BY TASKNO)>1 then null else FROMLOC END as fromLoc ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(toLoc),'')) OVER (PARTITION BY TASKNO)>1 then null else toLoc END as toLoc ,  CASE WHEN COUNT( DISTINCT coalesce (PRODSYSID,0)) OVER (PARTITION BY TASKNO)>1 then null else PRODSYSID END as prodSysId ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(PRODCODE),'')) OVER (PARTITION BY TASKNO)>1 then null else PRODCODE END as prodCode ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(PRODDESC),'')) OVER (PARTITION BY TASKNO)>1 then null else PRODDESC END as prodDesc ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(prodIdName),'')) OVER (PARTITION BY TASKNO)>1 then null else prodIdName END as prodIdName ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(OUTBOUNDLPN),'')) OVER (PARTITION BY TASKNO)>1 then null else OUTBOUNDLPN END as outboundLPN ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(OUTBOUNDPALLETLABEL),'')) OVER (PARTITION BY TASKNO)>1 then null else OUTBOUNDPALLETLABEL END as outboundPalletLabel ,  projectionTask ,bkOnHold,  CASE WHEN COUNT( DISTINCT coalesce (varchar(POOLID),'')) OVER (PARTITION BY TASKNO)>1 then null else POOLID END as poolId ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(STOPNO),'')) OVER (PARTITION BY TASKNO)>1 then null else STOPNO END as stopNo ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(CUSTNAME),'')) OVER (PARTITION BY TASKNO)>1 then null else CUSTNAME END as custName ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(custIdName),'')) OVER (PARTITION BY TASKNO)>1 then null else custIdName END as custIdName ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(TASKLINES),'')) OVER (PARTITION BY TASKNO)>1 then null else TASKLINES END as taskLines ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(ACTUALPRIORITY),'') ) OVER (PARTITION BY TASKNO)>1 then null else ACTUALPRIORITY END as actualPriority ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(palletId),'') ) OVER (PARTITION BY TASKNO)>1 then null else palletId END as palletId ,  CASE WHEN COUNT( DISTINCT coalesce (varchar(licence),'') ) OVER (PARTITION BY TASKNO)>1 then null else licence END as licence   FROM (  SELECT DISTINCT 0 NOTES_FLAG,0 DISPLAY_RF_EXISTANCE,0 RF_TYPE_EXISTANCE, TH.TASK_NUMBER as taskNo,TH.TASK_NUMBER_SYSID as taskNoSysId,TO_CHAR(RCVD_DT,'MM/dd/yyyy') AS shipDate,0 as cube, coalesce(REC.CUST_SYSID,0) as custSysId,CUST_DT.ACCT_NUMBER AS custNo ,REC.REC_NUMBER as dtORRecieptNo, REC.REC_NUMBER_SYSID as dlvryTicketSysId,DC_TSK_TYP.DTL_CODE AS taskType,TSKS.QTY as qty, DC_TSK_STS.DTL_CODE as status,DC_TSK_STS.CODE_DESC as taskStatusDesc,DC_TSK_TYP.CODE_DESC as taskTypeDesc, TH.USERID as userId,trim(coalesce(USR.USER_FIRST_NAME,'')||' '||coalesce(USR.USER_LAST_NAME,'')) AS userName , case when TH.TASK_PRIRTY is not null then   COALESCE(SUBSTR(LPAD(TH.TASK_PRIRTY,12,0),1,2)||'/'||SUBSTR(LPAD(TH.TASK_PRIRTY ,12,0),11,12),'') else '' end as taskPriority  , DK.DOCK_SYSID as dockSysId,DK.DOCK_ID as dockId, case when DK_DR_LN.DOOR_LANE_ID is not null then DK_DR_LN.DOOR_LANE_ID ELSE DK_DR.DOOR_NUMBER END as doorLane, WO.WORK_ORDER_NUMBER  as workOrderNo ,'' AS fromLoc  ,'' AS toLoc  ,REC_DTL.PROD_SYSID AS prodSysId  , EP.PROD_CODE  AS  prodCode,WP.PROD_DESC AS  prodDesc, case  when EP.PROD_CODE is not null then COALESCE(varchar(EP.PROD_CODE),'')||'-'|| COALESCE(WP.PROD_DESC,'')  else '' end  AS prodIdName,  '' as outboundLPN  ,'' as outboundPalletLabel  , 0 as projectionTask,0  as bkOnHold  ,'' AS poolId  ,0 AS stopNo,EC.CUST_NAME as custName, case  when CUST_DT.ACCT_NUMBER is not null then COALESCE(varchar(CUST_DT.ACCT_NUMBER),'')||'-'|| COALESCE(EC.CUST_NAME,'')  else '' end  AS custIdName, 0 AS taskLines,TH.TASK_PRIRTY as actualPriority,0 AS FROM_LOC_CNT,0 AS TO_LOC_CNT,COUNT(DISTINCT  REC_DTL.PROD_SYSID) OVER (PARTITION BY TSKS.TASK_NUMBER_SYSID) AS PROD_CNT,COALESCE(varchar(IPD.INB_CPID),'') AS palletId,COALESCE(varchar(IPD.INB_LPN),'') as licence   FROM (SELECT TASK_NUMBER_SYSID, 0  AS REC_NUMBER_SYSID,WHSE_SYSID,INB_LPN, COALESCE(varchar(RECIEVED_QTY),'') AS QTY,0 as doorLaneId,DOCK_DOOR_SYSID dockDoorSysId  FROM   MIGSRCINN.RECEIVING_TASK_DTL   UNION ALL  SELECT TASK_NUMBER_SYSID, REC_NUMBER_SYSID,WHSE_SYSID,LPN AS INB_LPN, COALESCE(varchar(PALLET_COUNT),'') AS QTY,TO_DOCK_DOOR_LANE_SYSID as doorLaneId,0 as dockDoorSysId  FROM MIGSRCINN.INBOUND_TASK_DETAIL  UNION ALL  SELECT TASK_NUMBER_SYSID, REC_NUMBER_SYSID,WHSE_SYSID,INB_LPN, COALESCE(varchar(PALLET_QTY),'') AS QTY, 0 as doorLaneId,0 as dockDoorSysId   FROM MIGSRCINN.PUTAWAY_RUNNING_TASK_DTL) TSKS  JOIN MIGSRCINN.TASK_HEADER TH ON TSKS.TASK_NUMBER_SYSID = TH.TASK_NUMBER_SYSID AND TH.WHSE_SYSID = TSKS.WHSE_SYSID   JOIN MIGSRCINN.DTL_CODE DC_TSK_TYP ON DC_TSK_TYP.DTL_CODE_SYSID = TH.TASK_TYPE_SYSID  AND DC_TSK_TYP.DTL_CODE IN ('RE','IR','PW','CI')  JOIN MIGSRCINN.MASTER_CODE MC_TSK_TYP ON DC_TSK_TYP.MASTER_CODE_SYSID = MC_TSK_TYP.MASTER_CODE_SYSID  AND MC_TSK_TYP.MASTER_CODE = 'TSKTYP'  JOIN MIGSRCINN.DTL_CODE DC_TSK_STS ON DC_TSK_STS.DTL_CODE_SYSID = TH.TASK_STATUS_SYSID   JOIN MIGSRCINN.MASTER_CODE MC_TSK_STS ON DC_TSK_STS.MASTER_CODE_SYSID = MC_TSK_STS.MASTER_CODE_SYSID  AND MC_TSK_STS.MASTER_CODE = 'TSKSTS'  LEFT JOIN MIGSRCINN.REC REC ON TSKS.REC_NUMBER_SYSID = REC.REC_NUMBER_SYSID AND REC.WHSE_SYSID = TSKS.WHSE_SYSID  LEFT JOIN MIGSRCINN.REC_DTL REC_DTL ON REC_DTL.REC_NUMBER_SYSID = REC.REC_NUMBER_SYSID AND REC.WHSE_SYSID = REC_DTL.WHSE_SYSID AND REC_DTL.CUST_SYSID = REC.CUST_SYSID  LEFT JOIN MIGSRCINN.INVTRY_PALLET_DTL IPD ON IPD.INB_LPN = TSKS.INB_LPN AND IPD.WHSE_SYSID = TSKS.WHSE_SYSID  LEFT JOIN MIGSRCINN.LOT_HEADER LH ON IPD.USCS_LOT_NUMBER_SYSID = LH.USCS_LOT_NUMBER_SYSID AND LH.WHSE_SYSID = IPD.WHSE_SYSID AND LH.CUST_SYSID = IPD.CUST_SYSID  LEFT JOIN MIGSRCINN.APPT APPT ON REC.APPT_SYSID = APPT.APPT_SYSID   AND REC.WHSE_SYSID = APPT.WHSE_SYSID  AND APPT.I_O_FLAG='I'  LEFT JOIN MIGSRCINN.DTL_CODE APPT_STS  ON APPT.APPT_STATUS_SYSID = APPT_STS.DTL_CODE_SYSID  LEFT JOIN MIGSRCINN.MASTER_CODE MC ON APPT_STS.MASTER_CODE_SYSID = MC.MASTER_CODE_SYSID AND MC.MASTER_CODE = 'APTSTS'  LEFT JOIN MIGSRCINN.ACCT_TYPE CUST_DT ON REC.CUST_SYSID = CUST_DT.ACCT_SYSID  LEFT JOIN MIGSRCINN.REF_TABLE CUST_REF ON CUST_DT.ACCT_TYPE_SYSID = CUST_REF.REF_SYSID AND CUST_REF.REF_CODE = 'CUS'  LEFT JOIN MIGSRCINN.ENT_CUST EC ON EC.CUST_SYSID = REC.CUST_SYSID    LEFT JOIN MIGSRCINN.USER USR ON TH.USERID = USR.USERID   LEFT JOIN MIGSRCINN.WHSE_CUST WC ON TSKS.WHSE_SYSID = WC.WHSE_SYSID  AND REC.CUST_SYSID = WC.CUST_SYSID   LEFT JOIN MIGSRCINN.DOCK_DOOR DK_DR ON (TSKS.dockDoorSysId = DK_DR.DOCK_DOOR_SYSID OR TH.DOCK_DOOR_SYSID=DK_DR.DOCK_DOOR_SYSID)   LEFT JOIN MIGSRCINN.DOCK DK ON ((TH.DOCK_SYSID = DK.DOCK_SYSID AND TH.WHSE_SYSID = DK.WHSE_SYSID) OR (DK.DOCK_SYSID = DK_DR.DOCK_SYSID))  LEFT JOIN MIGSRCINN.DOCK_DOOR_LANE DK_DR_LN ON TSKS.doorLaneId = DK_DR_LN.DOCK_DOOR_LANE_SYSID   LEFT JOIN  ( SELECT DISTINCT   CASE WHEN REPEATED_WO_CNT_FOR_DT = 1 THEN WORK_ORDER_NUMBER ELSE NULL END AS WORK_ORDER_NUMBER, REF_TYPE_VALUE,WHSE_SYSID,REPEATED_WO_CNT_FOR_DT FROM ( SELECT DISTINCT WO.WORK_ORDER_NUMBER,WO.REF_TYPE_VALUE,WO.WHSE_SYSID,  COUNT(DISTINCT WO.WORK_ORDER_NUMBER) OVER (PARTITION BY WO.REF_TYPE_VALUE) AS REPEATED_WO_CNT_FOR_DT FROM MIGSRCINN.WORK_ORDER WO  )SUB ) AS WO ON REC.REC_NUMBER = WO.REF_TYPE_VALUE AND REC.WHSE_SYSID = WO.WHSE_SYSID  LEFT JOIN MIGSRCINN.ENT_PROD EP ON REC_DTL.PROD_SYSID = EP.PROD_SYSID   LEFT JOIN MIGSRCINN.WHSE_PROD WP ON EP.PROD_SYSID = WP.PROD_SYSID  and TH.WHSE_SYSID=WP.WHSE_SYSID   WHERE TH.WHSE_SYSID=? AND  APPT.APPT_TS between  '2017-09-07 01:43:00' and '2017-09-08 13:43:00'  AND  REC.REC_NUMBER=?  AND REC.CUST_SYSID =?  AND (REC.APPT_SYSID IS  NULL OR (APPT_STS.DTL_CODE  IN('0','1','2','3') AND APPT.APPT_GATE_DEPART_TS IS NULL ))   UNION ALL  SELECT DISTINCT  MAX(CASE WHEN (O.NOTES_SYSID IS NOT NULL OR ORD.NOTES_SYSID  IS NOT NULL OR TH.TASK_ACCEPTED_NOTES_SYSID IS NOT NULL )   THEN 1 ELSE 0 END) OVER (PARTITION BY TSKS.TASK_NUMBER_SYSID) as NOTES_FLAG,  MAX(CASE WHEN RF_DSPLY.TRNSCT_NOTE_DTL_SYSID IS NOT NULL THEN 1 ELSE 0 END )  OVER (PARTITION BY TSKS.TASK_NUMBER_SYSID) AS DISPLAY_RF_EXISTANCE,  MAX(CASE WHEN RF_DSPLY.RF_TYPE_SYSID IS NOT NULL  THEN 1 ELSE 0 END) OVER (PARTITION BY TSKS.TASK_NUMBER_SYSID) AS RF_TYPE_EXISTANCE,  TH.TASK_NUMBER as taskNo,TH.TASK_NUMBER_SYSID as taskNoSysId,TO_CHAR(O.XPCTD_SHIP_DATE,'MM/dd/yyyy') AS shipDate,  coalesce(TSKS.PICKED_CUBE,0) as cube,O.CUST_SYSID as custSysId,CUST_DT.ACCT_NUMBER AS custNo ,O.DLVRY_TICKET_NUMBER as dtORRecieptNo,  O.DLVRY_TICKET_SYSID as dlvryTicketSysId,DC_TSK_TYP.DTL_CODE AS taskType,TSKS.QTY as qty,DC_TSK_STS.DTL_CODE as status,DC_TSK_STS.CODE_DESC as taskStatusDesc,DC_TSK_TYP.CODE_DESC as taskTypeDesc, TH.USERID as userId,trim(coalesce(USR.USER_FIRST_NAME,'')||' '||coalesce(USR.USER_LAST_NAME,'')) AS userName , case when TH.TASK_PRIRTY is not null then   COALESCE(SUBSTR(LPAD(TH.TASK_PRIRTY,12,0),1,2)||'/'||SUBSTR(LPAD(TH.TASK_PRIRTY ,12,0),11,12),'') else '' end as taskPriority  ,  DK.DOCK_SYSID as dockSysId,DK.DOCK_ID as dockId,  case when DK_DR_LN.DOOR_LANE_ID is not null then DK_DR_LN.DOOR_LANE_ID ELSE DK_DR.DOOR_NUMBER END as doorLane, WO.WORK_ORDER_NUMBER as workOrderNo ,COALESCE(fromLoc.LOC_ID, '') AS fromLoc,COALESCE(toLoc.LOC_ID, '') AS toLoc,  ORD.PROD_SYSID AS prodSysId  ,EP.PROD_CODE  AS  prodCode, WP.PROD_DESC AS  prodDesc,EP.PROD_CODE|| '-' || WP.PROD_DESC  as prodIdName,  coalesce(cast( CASE WHEN IPS.INB_LPN IS NOT NULL THEN IPS.MASTER_INB_LPN 	ELSE TSKS.OB_LPN  END as varchar(50)),'') as outboundLPN,  coalesce(TSKS.CUST_PALLET_LBL,'') as outboundPalletLabel  ,MAX(CASE WHEN PROJECTION_FLAG = 'Y' THEN 1 ELSE 0 END) OVER (PARTITION BY TSKS.TASK_NUMBER_SYSID)  as projectionTask,  case when TH.TASK_HOLD_FLAG= 'Y' then 1 else 0  end as bkOnHold ,COALESCE(O.POOL_ID,'') AS poolId  ,O.STOP_NUMBER AS stopNo,EC.CUST_NAME as custName, case  when CUST_DT.ACCT_NUMBER is not null then COALESCE(varchar(CUST_DT.ACCT_NUMBER),'')||'-'|| COALESCE(EC.CUST_NAME,'')  else '' end  AS custIdName, SUM(TASK_LN) OVER (PARTITION BY TSKS.TASK_NUMBER_SYSID ) AS taskLines,TH.TASK_PRIRTY as actualPriority,    COUNT(DISTINCT  COALESCE(TSKS.FROM_LOC_SYSID,0)) OVER (PARTITION BY TSKS.TASK_NUMBER_SYSID) AS FROM_LOC_CNT,  COUNT(DISTINCT  COALESCE(TSKS.TO_LOC_SYSID,0)) OVER (PARTITION BY TSKS.TASK_NUMBER_SYSID) AS TO_LOC_CNT,  COUNT(DISTINCT  COALESCE(ORD.PROD_SYSID,0)) OVER (PARTITION BY TSKS.TASK_NUMBER_SYSID) AS PROD_CNT,COALESCE(varchar(TSKS.OB_CPID),'') AS palletId,COALESCE(varchar(TSKS.OB_LPN),'') AS licence   FROM ( SELECT LD.TASK_NUMBER_SYSID,LD.WHSE_SYSID,LD.DLVRY_TICKET_SYSID,varchar(LD.LOAD_QTY) AS QTY,LD.FROM_LOC_SYSID ,0 AS TO_LOC_SYSID,  0 PICKED_CUBE,LD.OB_LPN,'' OB_CPID,'' CUST_PALLET_LBL,'N' PROJECTION_FLAG,0 AS TASK_LN,0 ORDER_DTL_SYSID,DOCK_DOOR_LANE_SYSID as doorLaneId,DOCK_DOOR_SYSID AS dockDoorSysId   FROM MIGSRCINN.LOADING_TASK_DTL LD  UNION ALL  SELECT OBR.TASK_NUMBER_SYSID,WHSE_SYSID,OBR.DLVRY_TICKET_SYSID,'' QTY,0 AS FROM_LOC_SYSID ,0 AS TO_LOC_SYSID,  0 PICKED_CUBE,OBR.OB_LPN,OBR.OB_CPID,'' CUST_PALLET_LBL,'N' PROJECTION_FLAG,0 AS TASK_LN,0 ORDER_DTL_SYSID,DROP_DOCK_DOOR_LANE_SYSID as doorLaneId,DROP_DOCK_DOOR_SYSID AS dockDoorSysId  FROM  MIGSRCINN.OUBND_RUNNING_TASK_DTL  OBR  UNION ALL  SELECT  CH_UL.TASK_NUMBER_SYSID,CH_UL.WHSE_SYSID, CH_UL.DLVRY_TICKET_SYSID, '' QTY, CH_UL.FROM_LOC_SYSID , TO_LOC_SYSID,   0 PICKED_CUBE, CH_UL.OB_LPN,'' OB_CPID,'' CUST_PALLET_LBL,'N' PROJECTION_FLAG,0 AS TASK_LN,0 ORDER_DTL_SYSID,TO_DOCK_DOOR_LANE_SYSID AS doorLaneId,TO_DOCK_DOOR_SYSID as dockDoorSysId   FROM  MIGSRCINN.CHECKING_OU_PT_TASK_DTL  CH_UL   UNION ALL  SELECT PB.TASK_NUMBER_SYSID,0 WHSE_SYSID, PB.DLVRY_TICKET_SYSID,varchar(SUM(PB.PUT_BACK_QTY) OVER (PARTITION BY TASK_NUMBER_SYSID)) as QTY,PB.FROM_LOC_SYSID , PB.TO_LOC_SYSID,  0 PICKED_CUBE, PB.OB_LPN,PB.OB_CPID,'' CUST_PALLET_LBL,'N' PROJECTION_FLAG,0 AS TASK_LN,0 ORDER_DTL_SYSID,-999 AS doorLaneId,-999 as dockDoorSysId  FROM  MIGSRCINN.PB_TASK_DTL PB  UNION ALL  SELECT PTD.TASK_NUMBER_SYSID,PTD.WHSE_SYSID, PTD.DLVRY_TICKET_SYSID,varchar(SUM(COALESCE(QTY_TO_PICK ,0))   OVER (PARTITION BY PTD.TASK_NUMBER_SYSID)) AS QTY,FROM_LOC_SYSID ,TH.TO_LOC_SYSID,PICKED_CUBE,OB_LPN,OB_CPID,CUST_PALLET_LBL,PROJECTION_FLAG,  CASE WHEN  DC_TSK_TYP.DTL_CODE IN ('BP','PL') THEN 1 ELSE 0 END  AS TASK_LN,ORDER_DTL_SYSID,TH.DOCK_DOOR_LANE_SYSID AS doorLaneId , TH.DOCK_DOOR_SYSID AS dockDoorSysId  FROM  MIGSRCINN.PICK_TASK_DTL PTD  JOIN MIGSRCINN.TASK_HEADER TH ON PTD.TASK_NUMBER_SYSID = TH.TASK_NUMBER_SYSID AND TH.WHSE_SYSID = PTD.WHSE_SYSID  JOIN MIGSRCINN.DTL_CODE DC_TSK_TYP ON DC_TSK_TYP.DTL_CODE_SYSID = TH.TASK_TYPE_SYSID  AND DC_TSK_TYP.DTL_CODE IN ('BK', 'BP', 'PL', 'TK')  ) TSKS  JOIN MIGSRCINN.TASK_HEADER TH ON TSKS.TASK_NUMBER_SYSID = TH.TASK_NUMBER_SYSID   JOIN MIGSRCINN.DTL_CODE DC_TSK_TYP ON DC_TSK_TYP.DTL_CODE_SYSID = TH.TASK_TYPE_SYSID  AND DC_TSK_TYP.DTL_CODE IN ('BK', 'BP', 'PL', 'OR','TK','CH','OU', 'LD','PB')  JOIN MIGSRCINN.MASTER_CODE MC_TSK_TYP ON DC_TSK_TYP.MASTER_CODE_SYSID = MC_TSK_TYP.MASTER_CODE_SYSID  AND MC_TSK_TYP.MASTER_CODE = 'TSKTYP'  JOIN MIGSRCINN.DTL_CODE DC_TSK_STS ON DC_TSK_STS.DTL_CODE_SYSID = TH.TASK_STATUS_SYSID   JOIN MIGSRCINN.MASTER_CODE MC_TSK_STS ON DC_TSK_STS.MASTER_CODE_SYSID = MC_TSK_STS.MASTER_CODE_SYSID  AND MC_TSK_STS.MASTER_CODE = 'TSKSTS'   LEFT JOIN MIGSRCINN.ORDER O ON TSKS.DLVRY_TICKET_SYSID = O.DLVRY_TICKET_SYSID AND O.WHSE_SYSID = TH.WHSE_SYSID  LEFT JOIN MIGSRCINN.ORDER_DTL ORD ON ORD.DLVRY_TICKET_SYSID = O.DLVRY_TICKET_SYSID AND O.WHSE_SYSID = ORD.WHSE_SYSID AND ORD.CUST_SYSID = O.CUST_SYSID  AND TSKS.ORDER_DTL_SYSID=ORD.ORDER_DTL_SYSID LEFT JOIN MIGSRCINN.APPT APPT ON O.APPT_SYSID = APPT.APPT_SYSID   AND O.WHSE_SYSID = APPT.WHSE_SYSID  AND APPT.I_O_FLAG='O'  LEFT JOIN MIGSRCINN.DTL_CODE APPT_STS  ON APPT.APPT_STATUS_SYSID = APPT_STS.DTL_CODE_SYSID   LEFT JOIN MIGSRCINN.MASTER_CODE MC ON APPT_STS.MASTER_CODE_SYSID = MC.MASTER_CODE_SYSID AND MC.MASTER_CODE = 'APTSTS'  LEFT JOIN MIGSRCINN.ACCT_TYPE CUST_DT ON O.CUST_SYSID = CUST_DT.ACCT_SYSID   LEFT JOIN MIGSRCINN.REF_TABLE CUST_REF ON CUST_DT.ACCT_TYPE_SYSID = CUST_REF.REF_SYSID AND CUST_REF.REF_CODE = 'CUS'  LEFT JOIN MIGSRCINN.ENT_CUST EC ON EC.CUST_SYSID = O.CUST_SYSID   LEFT JOIN MIGSRCINN.USER USR ON TH.USERID = USR.USERID   LEFT JOIN MIGSRCINN.WHSE_CUST WC ON TH.WHSE_SYSID = WC.WHSE_SYSID  AND O.CUST_SYSID = WC.CUST_SYSID  LEFT JOIN MIGSRCINN.DOCK_DOOR DK_DR ON (TSKS.dockDoorSysId = DK_DR.DOCK_DOOR_SYSID)   LEFT JOIN MIGSRCINN.DOCK DK ON ((TH.DOCK_SYSID = DK.DOCK_SYSID AND TH.WHSE_SYSID = DK.WHSE_SYSID) OR (DK.DOCK_SYSID = DK_DR.DOCK_SYSID) OR (O.DOCK_SYSID=DK.DOCK_SYSID))   LEFT JOIN MIGSRCINN.DOCK_DOOR_LANE DK_DR_LN ON TSKS.doorLaneId = DK_DR_LN.DOCK_DOOR_LANE_SYSID   LEFT JOIN  ( SELECT DISTINCT  CASE WHEN REPEATED_WO_CNT_FOR_DT = 1 THEN WORK_ORDER_NUMBER ELSE NULL END AS WORK_ORDER_NUMBER, REF_TYPE_VALUE,WHSE_SYSID,REPEATED_WO_CNT_FOR_DT FROM ( SELECT DISTINCT WO.WORK_ORDER_NUMBER,WO.REF_TYPE_VALUE,WO.WHSE_SYSID,  COUNT(DISTINCT WO.WORK_ORDER_NUMBER) OVER (PARTITION BY WO.REF_TYPE_VALUE) AS REPEATED_WO_CNT_FOR_DT FROM MIGSRCINN.WORK_ORDER WO  )SUB ) AS WO ON O.DLVRY_TICKET_NUMBER = WO.REF_TYPE_VALUE AND O.WHSE_SYSID = WO.WHSE_SYSID  LEFT JOIN MIGSRCINN.ENT_PROD EP ON ORD.PROD_SYSID = EP.PROD_SYSID   LEFT JOIN MIGSRCINN.WHSE_PROD WP ON EP.PROD_SYSID = WP.PROD_SYSID and TH.WHSE_SYSID=WP.WHSE_SYSID  LEFT JOIN MIGSRCINN.LOC fromLoc on TSKS.FROM_LOC_SYSID = fromLoc.LOC_SYSID  LEFT JOIN MIGSRCINN.LOC toLoc on TSKS.TO_LOC_SYSID = toLoc.LOC_SYSID  LEFT JOIN MIGSRCINN.INVTRY_PALLET_STACK ips on TSKS.OB_LPN = ips.INB_LPN  LEFT JOIN MIGSRCINN.GENERIC_SYSID GS ON (O.NOTES_SYSID = GS.GENERIC_SYSID OR ORD.NOTES_SYSID = GS.GENERIC_SYSID)  LEFT JOIN  (  SELECT TRNSCT_NOTE_DTL_SYSID, MIN(RF_TYPE_SYSID) AS RF_TYPE_SYSID, MAX(CASE WHEN DC.DTL_CODE IN ('P','L','C') THEN 1  ELSE 0 END) AS RF_TYPE_EXISTANCE  FROM MIGSRCINN.TRNSCT_NOTE_RF_DSPLY TND  JOIN MIGSRCINN.DTL_CODE DC ON TND.RF_TYPE_SYSID = DC.DTL_CODE_SYSID  JOIN MIGSRCINN.MASTER_CODE MC ON DC.MASTER_CODE_SYSID = MC.MASTER_CODE_SYSID  AND MASTER_CODE = 'NOTEDSPRF'  GROUP BY TRNSCT_NOTE_DTL_SYSID )  RF_DSPLY ON GS.GENERIC_SYSID = RF_DSPLY.TRNSCT_NOTE_DTL_SYSID  LEFT JOIN (SELECT  TRNSCT_NOTE_DTL_SYSID,MIN(NOTE_TYPE_SYSID) AS NOTE_TYPE_SYSID_EXISTANCE  FROM MIGSRCINN.TRNSCT_NOTE_DTL TND  JOIN MIGSRCINN.DTL_CODE DC ON TND.NOTE_TYPE_SYSID = DC.DTL_CODE_SYSID  JOIN MIGSRCINN.MASTER_CODE MC ON DC.MASTER_CODE_SYSID = MC.MASTER_CODE_SYSID AND MASTER_CODE = 'KEYWORDS' GROUP BY TRNSCT_NOTE_DTL_SYSID ) TRNSCT_NOTE ON GS.GENERIC_SYSID = TRNSCT_NOTE.TRNSCT_NOTE_DTL_SYSID  WHERE TH.WHSE_SYSID=? AND  APPT.APPT_TS between  '2017-09-07 01:43:00' and '2017-09-08 13:43:00'  AND  O.DLVRY_TICKET_NUMBER=?  AND O.CUST_SYSID =?  AND (O.APPT_SYSID IS  NULL OR  (APPT_STS.DTL_CODE  IN('0','1','2','3') AND APPT.APPT_GATE_DEPART_TS IS NULL) )    ) SRC  )FILTERSRC    ORDER BY FILTERSRC.taskNo  ASC   fetch first 20 rows only  1003 1007 2 0 2
+  002  000  013  013
+  003  001  006  014
+                      34fa1967 PSTMT: delete from MIGSRCINN.APP_LOCK where CREATE_TS<? 1003 1007 2 0 2
+  004  002  000  011
+                      953a893 PSTMT: select this_.USER_TMPLT_SYSID as USER1_336_0_, this_.CREATE_TS as CREATE2_336_0_, this_.CREATE_USERID as CREATE3_336_0_, this_.UPDATE_TS as UPDATE4_336_0_, this_.UPDATE_USERID as UPDATE5_336_0_, this_.VER_NUMBER as VER6_336_0_, this_.DATABASE_COLUMN_MTADTA as DATABASE7_336_0_, this_.DB_COLUMN_VALUE as DB8_336_0_, this_.TMPLT_MTADTA as TMPLT9_336_0_, this_.TMPLT_NAME as TMPLT10_336_0_, this_.USERID as USERID14_336_0_, this_.USER_INTRFC_SYSID as USER11_336_0_, this_.USER_INTRFC_GRID_SYSID as USER12_336_0_, this_.USER_TMPLT_DFT_FLAG as USER13_336_0_ from MIGSRCINN.USER_TMPLT this_ where this_.USERID=? and this_.USER_INTRFC_SYSID=? and this_.USER_INTRFC_GRID_SYSID=? 1003 1007 2 0 2
+                      680cb7f8 PSTMT: select this_.USER_TMPLT_SYSID as USER1_336_0_, this_.CREATE_TS as CREATE2_336_0_, this_.CREATE_USERID as CREATE3_336_0_, this_.UPDATE_TS as UPDATE4_336_0_, this_.UPDATE_USERID as UPDATE5_336_0_, this_.VER_NUMBER as VER6_336_0_, this_.DATABASE_COLUMN_MTADTA as DATABASE7_336_0_, this_.DB_COLUMN_VALUE as DB8_336_0_, this_.TMPLT_MTADTA as TMPLT9_336_0_, this_.TMPLT_NAME as TMPLT10_336_0_, this_.USERID as USERID14_336_0_, this_.USER_INTRFC_SYSID as USER11_336_0_, this_.USER_INTRFC_GRID_SYSID as USER12_336_0_, this_.USER_TMPLT_DFT_FLAG as USER13_336_0_ from MIGSRCINN.USER_TMPLT this_ where this_.USERID=? and this_.USER_INTRFC_SYSID=? and this_.USER_INTRFC_GRID_SYSID=? and this_.TMPLT_NAME=? 1003 1007 2 0 2
+  005  000  013  013
+  006  001  001  003
+                      4657859a PSTMT: delete from MIGSRCINN.APP_LOCK where USERID=? 1003 1007 2 0 2
+  007  000  013  013
+  008  000  013  013
+  009  000  013  013
+  010  002  013  000
+                      22829d16 CSTMT: {call MIGSRCINN.TM_APPT_GRID(?,?,?,?,?,103272,NULL,NULL,NULL,NULL,13295,'2017-09-07 01:43:00','2017-09-08 13:43:00',NULL,NULL,101332,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,0,0,20,' AND  STATUS <> ^CLS^ ','ORDER BY APPTTIME ASC')} 1003 1007 2 2
+                      3681aee5 CSTMT: {call MIGSRCINN.TM_ORDER_GRID(?,?,?,?,?,103272,NULL,NULL,NULL,NULL,13295,'2017-09-07 01:43:00','2017-09-08 13:43:00',NULL,NULL,101332,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,0,0,20,' AND  APPTSTATUS <> ^CLS^ ','ORDER BY SHIPDATE ASC')} 1003 1007 2 2
+  011  002  004  001
+                      3bbf7cba PSTMT: select a.ACCT_SYSID, a.ACCT_NUMBER, e.CUST_NAME, w.cust_group  from MIGSRCINN.WHSE_CUST w, MIGSRCINN.ACCT_TYPE a, MIGSRCINN.ENT_CUST e  where a.ACCT_SYSID = w.CUST_GROUP and e.CUST_SYSID=a.ACCT_SYSID and w.WHSE_SYSID =? group by a.ACCT_SYSID, a.ACCT_NUMBER, e.CUST_NAME, w.cust_group  1003 1007 2 0 2
+                      413e5502 CSTMT: {call MIGSRCINN.TM_SUMMARY(?,?,?,?,?,103272,NULL,NULL,NULL,NULL,13295,'2017-09-07 01:43:00','2017-09-08 13:43:00',NULL,NULL,101332,NULL,NULL,NULL,NULL,NULL,NULL,1,1,0,0,0)} 1003 1007 2 2
+  012  000  013  013
+  013  LRU       010
+  014  MRU  003
+
+"
+  strings[111] = "_______________________________________________________________________"
+  strings[112] = ""
+  strings[113] = "    First Failure Data Capture information for"
+  strings[114] = "          com.ibm.ws.rsadapter.impl.WSConnectionRequestInfoImpl@77e20a1e"
+  strings[115] = "_______________________________________________________________________"
+  strings[116] = ""
+  changable CRI = ""
+  strings[118] = "  true
+"
+  strings[119] = "User Name:"
+  strings[120] = "  null
+"
+  strings[121] = "Password:"
+  strings[122] = "  null
+"
+  strings[123] = "Isolation Level:"
+  strings[124] = "  READ COMMITTED (2)
+"
+  strings[125] = "Catalog:"
+  strings[126] = "  null
+"
+  strings[127] = "Schema:"
+  strings[128] = "  null
+"
+  strings[129] = "Is Read Only?"
+  strings[130] = "  null
+"
+  strings[131] = "Type Map:"
+  strings[132] = "  null
+"
+  strings[133] = "Cursor Holdability:"
+  strings[134] = "  DEFAULT CURSOR HOLDABILITY VALUE (0)
+"
+  strings[135] = "Config ID: 1
+"
+  strings[136] = "Hash Code:"
+  strings[137] = "  1
+"
+  strings[138] = "Support isolation switching on connection:"
+  strings[139] = "  false
+"
+  gssName = "
+"
+  strings[141] = "null
+"
+  gssCredential = "
+"
+  strings[143] = "null
+"
+  oracle properties = "
+"
+  strings[145] = "null
+"
+  strings[146] = "_______________________________________________________________________"
+  strings[147] = ""
+  strings[148] = "    First Failure Data Capture information for"
+  strings[149] = "          com.ibm.ws.rsadapter.impl.WSManagedConnectionFactoryImpl@1c5e89fe"
+  strings[150] = "_______________________________________________________________________"
+  strings[151] = ""
+  strings[152] = "com.ibm.ws.rsadapter.DSConfig@4b21cbcb"
+  strings[153] = "[beginTranForResultSetScrollingAPIs, false, beginTranForVendorAPIs, true, commitOrRollbackOnCleanup, null, connectionSharing, MatchOriginalRequest, isolationLevel, 2, jndiName, jdbc/ewms, enableConnectionCasting, false, queryTimeout, null, statementCacheSize, 10, supplementalJDBCTrace, null, syncQueryTimeoutWithTransactionTimeout, false, transactional, true]"
+  strings[154] = "[com.ibm.ws.classloading.internal.AppClassLoader@26a09139, true, false, interface javax.sql.XADataSource]"
+  strings[155] = "{extendedDynamic=false, cursorHold=false, secure=false, password=******, translateHex=character, packageCriteria=default, lazyClose=false, translateBinary=false, queryOptimizeGoal=0, maximumScale=31, rollbackCursorHold=false, fullOpen=true, sort=hex, blockSize=32, holdStatements=false, driver=toolbox, packageCCSID=13488, naming=sql, threadUsed=true, metaDataSource=1, errors=basic, savePasswordWhenSerialized=******, cursorSensitivity=asensitive, access=all, packageAdd=true, dataTruncation=true, prefetch=true, serverName=DEVDB2.USCOLD.COM, xaLooselyCoupledSupport=0, packageCache=false, packageError=warning, minimumDivideScale=0, translateBoolean=true, extendedMetaData=false, trueAutoCommit=false, isolationLevelSwitchingSupport=false, bigDecimal=true, packageLibrary=QGPL, lobThreshold=0, bidiImplicitReordering=true, serverTraceCategories=0, dataCompression=true, maximumPrecision=31, blockCriteria=2, holdInputLocators=true, bidiNumericOrdering=false, user=EWMDEVDB2, prompt=true, remarks=system}"
+  strings[156] = "DataSource Implementation Class:"
+  strings[157] = "  class com.ibm.as400.access.AS400JDBCXADataSource
+"
+  strings[158] = "Underlying DataSource Object: com.ibm.as400.access.AS400JDBCXADataSource@42c23151"
+  strings[159] = "  
+"
+  strings[160] = "Log Writer:"
+  strings[161] = "  null
+"
+  strings[162] = "Counter of fatal connection errors on ManagedConnections created by this MCF:"
+  strings[163] = "  0
+"
+

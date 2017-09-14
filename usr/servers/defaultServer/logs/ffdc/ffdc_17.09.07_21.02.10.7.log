@@ -1,0 +1,156 @@
+------Start of DE processing------ = [9/7/17 21:02:10:710 EDT]
+Exception = javax.resource.ResourceException
+Source = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection.beginTransactionIfNecessary
+probeid = 324
+Stack Dump = javax.resource.ResourceException: enlist: caught Exception
+	at com.ibm.ejs.j2c.XATransactionWrapper.enlist(XATransactionWrapper.java:525)
+	at com.ibm.ejs.j2c.ConnectionManager.lazyEnlist(ConnectionManager.java:1256)
+	at com.ibm.ws.rsadapter.impl.WSRdbManagedConnectionImpl.lazyEnlist(WSRdbManagedConnectionImpl.java:1820)
+	at com.ibm.ws.rsadapter.jdbc.WSJdbcConnection.beginTransactionIfNecessary(WSJdbcConnection.java:394)
+	at com.ibm.ws.rsadapter.jdbc.WSJdbcConnection.prepareStatement(WSJdbcConnection.java:2184)
+	at com.ibm.ws.rsadapter.jdbc.WSJdbcConnection.prepareStatement(WSJdbcConnection.java:2154)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$1.doPrepare(StatementPreparerImpl.java:98)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:182)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareStatement(StatementPreparerImpl.java:91)
+	at org.hibernate.hql.internal.ast.exec.BasicExecutor.execute(BasicExecutor.java:90)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.executeUpdate(QueryTranslatorImpl.java:413)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.performExecuteUpdate(HQLQueryPlan.java:282)
+	at org.hibernate.internal.SessionImpl.executeUpdate(SessionImpl.java:1290)
+	at org.hibernate.internal.QueryImpl.executeUpdate(QueryImpl.java:116)
+	at com.uscs.ewms.mdm.dao.LockingInterceptorDAOImpl.removeAllOldLocks(LockingInterceptorDAOImpl.java:127)
+	at com.uscs.ewms.common.locking.service.LockInterceptorServiceImpl.unclokRecordTimed(LockInterceptorServiceImpl.java:101)
+	at sun.reflect.GeneratedMethodAccessor161.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport$1.doInTransaction(TransactionAspectSupport.java:305)
+	at org.springframework.transaction.jta.WebSphereUowTransactionManager$UOWActionAdapter.run(WebSphereUowTransactionManager.java:347)
+	at com.ibm.ws.uow.embeddable.EmbeddableUOWManagerImpl.runUnderNewUOW(EmbeddableUOWManagerImpl.java:775)
+	at com.ibm.ws.uow.embeddable.EmbeddableUOWManagerImpl.runUnderUOW(EmbeddableUOWManagerImpl.java:368)
+	at org.springframework.transaction.jta.WebSphereUowTransactionManager.execute(WebSphereUowTransactionManager.java:290)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:299)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:168)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85)
+	at com.uscs.ewms.logging.LoggingAspect.log(LoggingAspect.java:30)
+	at sun.reflect.GeneratedMethodAccessor117.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:629)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:618)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:168)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy102.unclokRecordTimed(Unknown Source)
+	at com.uscs.ewms.scheduler.service.AppLockScheduleBean.clearLocks(AppLockScheduleBean.java:30)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:81)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: javax.transaction.SystemException: XAResource start association error:XAER_RMFAIL
+	at com.ibm.tx.jta.impl.RegisteredResources.startRes(RegisteredResources.java:1048)
+	at com.ibm.tx.jta.impl.RegisteredResources.enlistResource(RegisteredResources.java:642)
+	at com.ibm.tx.jta.impl.TransactionImpl.enlistResource(TransactionImpl.java:2362)
+	at com.ibm.tx.jta.embeddable.impl.EmbeddableTranManagerSet.enlist(EmbeddableTranManagerSet.java:157)
+	at com.ibm.ws.transaction.services.TransactionManagerService.enlist(TransactionManagerService.java:357)
+	at com.ibm.ejs.j2c.XATransactionWrapper.enlist(XATransactionWrapper.java:464)
+	... 58 more
+Caused by: javax.transaction.xa.XAException
+	at com.ibm.as400.access.AS400JDBCXAResource.throwXAException(AS400JDBCXAResource.java:970)
+	at com.ibm.as400.access.AS400JDBCXAResource.start(AS400JDBCXAResource.java:938)
+	at com.ibm.ws.rsadapter.impl.WSRdbXaResourceImpl.start(WSRdbXaResourceImpl.java:1087)
+	at com.ibm.ejs.j2c.XATransactionWrapper.start(XATransactionWrapper.java:976)
+	at com.ibm.ws.Transaction.JTA.JTAResourceBase.start(JTAResourceBase.java:157)
+	at com.ibm.tx.jta.impl.RegisteredResources.startRes(RegisteredResources.java:1000)
+	... 63 more
+
+Dump of callerThis
+Object type = com.ibm.ws.rsadapter.jdbc.WSJdbcConnection
+  strings[0] = "_______________________________________________________________________"
+  strings[1] = ""
+  strings[2] = "    First Failure Data Capture information for"
+  strings[3] = "          com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@46322915"
+  strings[4] = "_______________________________________________________________________"
+  strings[5] = ""
+  strings[6] = "com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@46322915
+"
+  strings[7] = "Transaction Manager global transaction status is"
+  strings[8] = "  STATUS MARKED ROLLBACK (1)
+"
+  strings[9] = "Underlying Connection: null"
+  strings[10] = "  null
+"
+  strings[11] = "Key Object:"
+  strings[12] = "  null
+"
+  strings[13] = "Connection Manager:"
+  strings[14] = "  null
+"
+  strings[15] = "ConnectionManager supports lazy association?"
+  strings[16] = "  false
+"
+  strings[17] = "ConnectionManager supports lazy enlistment?"
+  strings[18] = "  false
+"
+  strings[19] = "Handle is reserved? false
+"
+  strings[20] = "AutoCommit value tracked by handle: true
+"
+  strings[21] = "Thread id:"
+  strings[22] = "  null
+"
+  strings[23] = "Wrapper State: "
+  strings[24] = "  CLOSED
+"
+  strings[25] = "Parent wrapper:"
+  strings[26] = "  null
+"
+  strings[27] = "Child wrapper:
+"
+  strings[28] = "  null"
+  strings[29] = ""
+  strings[30] = ""
+  strings[31] = "ConnectionRequestInfo:"
+  strings[32] = "  null
+"
+  strings[33] = "_______________________________________________________________________"
+  strings[34] = ""
+  strings[35] = "    First Failure Data Capture information for"
+  strings[36] = "          com.ibm.ws.rsadapter.impl.WSManagedConnectionFactoryImpl@1c5e89fe"
+  strings[37] = "_______________________________________________________________________"
+  strings[38] = ""
+  strings[39] = "com.ibm.ws.rsadapter.DSConfig@4b21cbcb"
+  strings[40] = "[beginTranForResultSetScrollingAPIs, false, beginTranForVendorAPIs, true, commitOrRollbackOnCleanup, null, connectionSharing, MatchOriginalRequest, isolationLevel, 2, jndiName, jdbc/ewms, enableConnectionCasting, false, queryTimeout, null, statementCacheSize, 10, supplementalJDBCTrace, null, syncQueryTimeoutWithTransactionTimeout, false, transactional, true]"
+  strings[41] = "[com.ibm.ws.classloading.internal.AppClassLoader@26a09139, true, false, interface javax.sql.XADataSource]"
+  strings[42] = "{extendedDynamic=false, cursorHold=false, secure=false, password=******, translateHex=character, packageCriteria=default, lazyClose=false, translateBinary=false, queryOptimizeGoal=0, maximumScale=31, rollbackCursorHold=false, fullOpen=true, sort=hex, blockSize=32, holdStatements=false, driver=toolbox, packageCCSID=13488, naming=sql, threadUsed=true, metaDataSource=1, errors=basic, savePasswordWhenSerialized=******, cursorSensitivity=asensitive, access=all, packageAdd=true, dataTruncation=true, prefetch=true, serverName=DEVDB2.USCOLD.COM, xaLooselyCoupledSupport=0, packageCache=false, packageError=warning, minimumDivideScale=0, translateBoolean=true, extendedMetaData=false, trueAutoCommit=false, isolationLevelSwitchingSupport=false, bigDecimal=true, packageLibrary=QGPL, lobThreshold=0, bidiImplicitReordering=true, serverTraceCategories=0, dataCompression=true, maximumPrecision=31, blockCriteria=2, holdInputLocators=true, bidiNumericOrdering=false, user=EWMDEVDB2, prompt=true, remarks=system}"
+  strings[43] = "DataSource Implementation Class:"
+  strings[44] = "  class com.ibm.as400.access.AS400JDBCXADataSource
+"
+  strings[45] = "Underlying DataSource Object: com.ibm.as400.access.AS400JDBCXADataSource@42c23151"
+  strings[46] = "  
+"
+  strings[47] = "Log Writer:"
+  strings[48] = "  null
+"
+  strings[49] = "Counter of fatal connection errors on ManagedConnections created by this MCF:"
+  strings[50] = "  1
+"
+  strings[51] = "ManagedConnection:"
+  strings[52] = "  null
+"
+

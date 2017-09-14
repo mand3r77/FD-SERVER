@@ -1,0 +1,13 @@
+
+arg0=--batch-file=--stop
+arg1=stop
+arg2=defaultServer
+exit=1
+
+                 Java home:  C:\Program Files\Java\jre1.8.0_144
+              Install root:  C:/EWM_/EWM-BE-SERVER/
+          System libraries:  C:/EWM_/EWM-BE-SERVER/lib/
+                 User root:  C:/EWM_/EWM-BE-SERVER/usr/
+                    Config:  C:/EWM_/EWM-BE-SERVER/usr/servers/defaultServer/
+                    Output:  C:/EWM_/EWM-BE-SERVER/usr/servers/defaultServer/
+

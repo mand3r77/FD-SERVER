@@ -1,0 +1,145 @@
+# EWMS System Properties
+
+# Environment
+appEnv=DEV
+
+# Proxy Settings
+useHttpProxy=false
+httpProxyHost=
+httpProxyPort=
+proxyUser=
+proxyPassword=
+
+# eWMS - Schema
+#ewms.schema=EWMSG1DBF
+#ewms.schema=UATTESTCS
+ewms.schema=EWMUYMDBF
+#ewms.schema=EWMDG1DBF
+trailerReportPath=C:/trailerreports
+# MDM Report
+mdmreportPath=C:/eWMSmdmreports
+
+# EMAIL Server
+email.server.host.main=notes01.uscold.com
+email.server.port.main=25
+
+email.server.host.backup=notes02.uscold.com
+email.server.port.backup=25
+
+# LDAP
+ldapURL=ldap://10.1.129.40:389
+ldapDomain=EWMSTEST.local
+adminName=CN=Administrator,CN=Users,DC=ewmstest,DC=local
+adminPassword=eWMS$032014
+initialContextFactory=com.sun.jndi.ldap.LdapCtxFactory
+securityAuthentication=simple
+searchBase=DC=EWMSTEST,DC=LOCAL
+
+#TMS Program Properties
+#tms.prog.host=10.1.128.61
+#tms.prog.user=HQIRPATA
+#tms.prog.password=newpass
+#tms.prog.library=USCSOBJ
+#tms.prog.programName=UPDTMSAUX
+#tms.updateURL=http://10.1.128.37:7080/customer/TMS/CreateUpdateCustomer
+#tms.prog.enabled=false
+
+#TMS Program Properties
+tms.updateURL=http://ewmsuat.uscold.com:8083/sitms/customer/create
+tms.prog.enabled=true
+
+#Help
+ewms.help.baseURL=http://devwas.uscold.com:7999/docs/WebHelp
+
+
+#EmailId
+
+reportSenderEmail=EWM_Reports@uscs.com
+errorSenderEmail=EWM_Errors@uscs.com
+genericSenderEmail=admin@uscs.com
+pushSenderEmail=EnterprisePush@uscold.com 
+receiverEmail=mmander@uscold.com	
+supportEmail=mmander@uscold.com 
+
+copyscriptEmail=COPYSCRIPT_OPERATIONS@uscold.com
+
+
+#Default PDF Table Properties
+pdf.width.percent=100
+pdf.space.before=0
+pdf.space.after=0
+
+#Default PDF Grid Margins
+pdf.landscape.default=false
+left.margin.default=10
+right.margin.default=10
+top.margin.default=10
+bottom.margin.default=10
+
+#Transaction History PDF Grid Margins
+pdf.landscape.transhist=false
+left.margin.transhist=10
+right.margin.transhist=10
+top.margin.transhist=10
+bottom.margin.transhist=10
+
+#Jasper Reports Path
+jasperReportPathPDF = C:/EWM_/jasperReports/PDF/
+
+
+#App Lock Age
+#Age time is configured in minutes
+appLockAgeVariable=60
+#Sheduled time is cron expression 0*/30**** is every 30 minutes 
+appLockScheduleTime = 0 */30 * * * *
+
+
+#Added to work on trunk code
+# added on 3/18 for full deploy
+# ftp properties
+ftpHostName=uscsdev.uscold.com
+ftpUserName=hqipgund
+ftpPassWord=prav75
+rootFolder=/lawson/
+filecount=100
+maxUploadSize=20971520
+
+daysToWarn=5
+
+#Printer Management
+printer.server=devwas.uscold.com
+printer.server.user=HQIRPATA
+printer.server.pwd=HQIRPATA
+
+#HazelCast Cache Server
+cacheGroupName=ewms-sit
+cacheGroupPassword=ewms-sit
+#Comma Separated Network Address
+cacheServerAddress=10.1.100.205
+
+#Mark Magic server properties for Label printing
+markmagic.server.url=HTTP://10.1.100.55:8080/MMPI
+markmagic.user.library=MRKMAGDTA
+markmagic.label.printerType=ZTZ140XI12
+
+orderReportPath=C:\\development\\eWMS\\eWMReports\\orderReport
+loadingDiagramPath=C:\\development\\eWMS\\eWMReports\\loadingDiagram
+lawsonCSVFilepath=C:\\development\\eWMS\\eWMSReports\\lawsonCSVFiles
+invoiceGenerationFilePath=c:\\development\\eWMS\\eWMSReports\\Invoices
+invoicePdfRegisterFilepath=c:/eWMS/eWMSLog
+
+# Order Management Report 2
+loadingDiagramPath=C:\\eWMSmdmreports\\loadingDiagramPath
+# Take weight Report
+takeWeightPrintPath =C:\\development\\eWMS\\eWMReports\\TakeWeight
+#Pallet Pack List
+palletPackListPath=C:\\development\\eWMS\\eWMReports\\palletPackList
+laborReportPath=c:\\development\\eWMS\\eWMReports\\laborReport
+#cycleCountJob Delay
+cycleCountJobDelay=240000000
+
+#Bol Print Report
+bolPrintPath=C:\\eWMSmdmreports\\Bol
+
+#Quartz Properties Location
+quartz.properties=file:C:\\development\\eWMS\\config\\quartz.properties

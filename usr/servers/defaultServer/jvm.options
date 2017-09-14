@@ -1,0 +1,8 @@
+-Xms40m
+-Xmx768m
+-XX:MaxPermSize=256m
+-Dlog4j.configuration=file:C:/EWM_/EWM-BE-SERVER/eWMSLog/log4j.properties
+-Dlog4j.debug=true
+-Dewms.system.properties.path=file:/C:/EWM_/EWM-BE-SERVER/eWMSLog/ewms-system.properties
+-Dtms.program.propeties.path=file:/C:/EWM_/EWM-BE-SERVER/eWMSLog/tms-program-properties.properties
+-Dos.name=Windows 8

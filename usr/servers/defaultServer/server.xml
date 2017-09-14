@@ -1,0 +1,108 @@
+<server description="new server">
+
+    <!-- Enable features -->
+    <featureManager>
+         <feature>jsp-2.2</feature>
+    	<feature>jdbc-4.0</feature>
+		<feature>jpa-2.0</feature>
+		<feature>servlet-3.0</feature>
+		<feature>localConnector-1.0</feature>
+	    <feature>jaxb-2.2</feature>
+	    <feature>monitor-1.0</feature>
+    </featureManager>
+
+    <!-- To access this server from a remote client add a host attribute to the following element, e.g. host="*" -->
+  
+        <httpEndpoint host="voorhees165" httpPort="9081" httpsPort="9443" id="defaultHttpEndpoint"/>
+
+       <applicationMonitor updateTrigger="mbean"/>
+
+    <fileset dir="C:/development/tools/eWMSLibs" id="CommonModuleFileSet" includes="commonmodule-3.0.0-SNAPSHOT.jar"/> 
+    <library filesetRef="CommonModuleFileSet" id="CommonModuleLib"/>
+
+	
+	<fileset dir="C:/development/tools/eWMSLibs" id="MailJars" includes="activation-1.1.jar, mail-1.4.jar"/>
+	<library filesetRef="MailJars" id="MailLib"/>
+	
+    <fileset dir="C:/Dblib" id="Db2FileSet" includes="jt400.jar"/>
+    <library filesetRef="Db2FileSet" id="DB2Lib"/>
+    
+    <!-- Added for Trunk --> 
+    <fileset dir="C:/development/tools/eWMSLibs" id="IBMJPSFileSet" includes="ibmjps-1.4.0.jar"/>
+	<library filesetRef="IBMJPSFileSet" id="IBMJPSLib"/> 
+    <!-- END Added for Trunk --> 
+        
+    <jdbcDriver id="DB2400" javax.sql.ConnectionPoolDataSource="com.ibm.as400.access.AS400JDBCConnectionPoolDataSource" javax.sql.DataSource="com.ibm.as400.access.AS400JDBCDataSource" javax.sql.XADataSource="com.ibm.as400.access.AS400JDBCXADataSource" libraryRef="DB2Lib">
+    </jdbcDriver>
+    
+    
+      <!--<dataSource beginTranForResultSetScrollingAPIs="false" id="EWMSDataSource" isolationLevel="TRANSACTION_READ_COMMITTED" jdbcDriverRef="DB2400" jndiName="jdbc/ewms" type="javax.sql.XADataSource">
+            <properties.db2.i.toolbox password="{xor}MTooLz4sLA==" serverName="DEVDB2.USCOLD.COM" user="HQIRPATA"/>
+            <connectionManager id="eWMSConnectionManager" maxConnectionsPerThread="5" maxPoolSize="10" minPoolSize="1"/>
+      </dataSource>
+    -->
+     
+      <dataSource beginTranForResultSetScrollingAPIs="false" id="EWMSDataSource" isolationLevel="TRANSACTION_READ_COMMITTED" jdbcDriverRef="DB2400" jndiName="jdbc/ewms" type="javax.sql.XADataSource">
+    	<properties.db2.i.toolbox access="all" fullOpen="true" password="{xor}OigyO2wpOz1t" prompt="true" serverName="DEVDB2.USCOLD.COM" user="EWMDEVDB2"/> 
+        <connectionManager id="eWMSConnectionManager" maxConnectionsPerThread="20" maxPoolSize="20" minPoolSize="1"/>
+    </dataSource>
+
+    <!--  
+    <dataSource beginTranForResultSetScrollingAPIs="false" id="EWMSDataSource" jdbcDriverRef="DB2400" jndiName="jdbc/ewms" type="javax.sql.XADataSource">
+    	<properties.db2.i.toolbox fullOpen="true" password="{xor}Fw4WFRUQDRs=" serverName="UATDB2.USCOLD.COM" user="HQIJJORD"/> 
+        <connectionManager id="eWMSConnectionManager" maxConnectionsPerThread="10" maxPoolSize="15" minPoolSize="1"/>
+    </dataSource>
+   	-->
+   	<!-- Added for Trunk --> 
+   	<dataSource beginTranForResultSetScrollingAPIs="false" id="ediDataSource" isolationLevel="TRANSACTION_READ_COMMITTED" jdbcDriverRef="DB2400" jndiName="jdbc/edi" type="javax.sql.XADataSource">	
+		<properties.db2.i.toolbox password="{xor}Ny42OjspOjE=" serverName="DEVDB2.USCOLD.COM" user="HQIEDVEN"/>
+		<connectionManager id="eWMSConnectionManager" maxConnectionsPerThread="5" maxPoolSize="20" minPoolSize="1"/>
+	</dataSource>	
+   	<!-- END Added for Trunk -->
+    
+    <dataSource beginTranForResultSetScrollingAPIs="false" id="WMS1DataSource" jdbcDriverRef="DB2400" jndiName="jdbc/wms1" type="javax.sql.XADataSource">
+    	<properties.db2.i.toolbox password="{xor}CgwcHQsXChhu" serverName="BTHUG1.USCOLD.COM" user="USCBTHUG1"/>
+        <connectionManager id="WMS1ConnectionManager" maxConnectionsPerThread="2" maxPoolSize="2" minPoolSize="1"/>
+    </dataSource>
+    
+    <dataSource beginTranForResultSetScrollingAPIs="false" id="WMS2DataSource" jdbcDriverRef="DB2400" jndiName="jdbc/wms2" type="javax.sql.XADataSource">
+    	<properties.db2.i.toolbox password="{xor}CgwcChEcChhu" serverName="FRSUG1.USCOLD.COM" user="USCUNCUG1"/>
+        <connectionManager id="WMS2ConnectionManager" maxConnectionsPerThread="2" maxPoolSize="2" minPoolSize="1"/>
+    </dataSource>
+    
+    <dataSource beginTranForResultSetScrollingAPIs="false" id="WMS3DataSource" jdbcDriverRef="DB2400" jndiName="jdbc/wms3" type="javax.sql.XADataSource">
+    	<properties.db2.i.toolbox password="{xor}CgwcGx4TChhu" serverName="NSHUG1.USCOLD.COM" user="USCDALUG1"/>
+        <connectionManager id="WMS3ConnectionManager" maxConnectionsPerThread="2" maxPoolSize="2" minPoolSize="1"/>
+    </dataSource>
+    
+    <dataSource beginTranForResultSetScrollingAPIs="false" id="EUSDataSource" jdbcDriverRef="DB2400" jndiName="jdbc/eus" type="javax.sql.XADataSource">
+    	<properties.db2.i.toolbox password="{xor}CgwcCxIMChhu" serverName="NETUG1.USCOLD.COM" user="USCTMSUG1"/>
+        <connectionManager id="EUSConnectionManager" maxConnectionsPerThread="2" maxPoolSize="2" minPoolSize="1"/>
+    </dataSource>
+    
+    <dataSource beginTranForResultSetScrollingAPIs="true" id="TmsDataSource" jdbcDriverRef="DB2400" jndiName="jdbc/NACONSTMS" type="javax.sql.DataSource">
+    	<properties.db2.i.toolbox databaseName="USCSDEV" password="{xor}CxIMEA8LCh4L" serverName="uscsdev.uscold.com" user="TMSOPTUAT"/>
+        <connectionManager id="TmsConnectionManager" maxConnectionsPerThread="10" maxPoolSize="10" minPoolSize="1"/>
+    </dataSource>  
+
+    <dataSource beginTranForResultSetScrollingAPIs="false" id="RFDataSource" jdbcDriverRef="DB2400" jndiName="jdbc/rfpoc" type="javax.sql.XADataSource">
+    	<properties.db2.i.toolbox password="{xor}Fw4WDQwWERg=" serverName="NASHBACK.USCOLD.COM" user="HQIRSING"/>
+    	<connectionManager maxPoolSize="2" minPoolSize="1"/>
+    </dataSource>
+    
+	
+	   <!--  COPYSCRIPT DATASOURCES -->
+     <dataSource beginTranForResultSetScrollingAPIs="false" id="CSUATDataSource" isolationLevel="TRANSACTION_READ_COMMITTED" jdbcDriverRef="DB2400" jndiName="jdbc/csuat" type="javax.sql.XADataSource">
+    	<properties.db2.i.toolbox password="{xor}CgwcHA8GCgwN" serverName="10.1.100.198" user="USCCPYUSR"/>
+        <connectionManager id="CSUATConnectionManager" maxConnectionsPerThread="2" maxPoolSize="2" minPoolSize="1"/>
+    </dataSource>
+    
+      <dataSource beginTranForResultSetScrollingAPIs="false" id="CSPRDDataSource" isolationLevel="TRANSACTION_READ_COMMITTED" jdbcDriverRef="DB2400" jndiName="jdbc/csprd" type="javax.sql.XADataSource">
+    	<properties.db2.i.toolbox password="{xor}CgwcHA8GCgwN" serverName="10.1.96.113" user="USCCPYUSR"/>
+        <connectionManager id="CSPRDConnectionManager" maxConnectionsPerThread="2" maxPoolSize="2" minPoolSize="1"/>
+    </dataSource>
+
+ <webApplication id="web" location="web.war" name="web" type="war">
+       <classloader delegation="parentLast" privateLibraryRef="CommonModuleLib,MailLib,DB2Lib,IBMJPSLib"/>
+    </webApplication>
+</server>

@@ -1,0 +1,538 @@
+------Start of DE processing------ = [9/7/17 11:44:28:098 EDT]
+Exception = java.sql.SQLException
+Source = com.ibm.ws.rsadapter.jdbc.WSJdbcResultSet.next
+probeid = 2624
+Stack Dump = java.sql.SQLException: [SQL0802] Data conversion or data mapping error.
+	at com.ibm.as400.access.JDError.createSQLExceptionSubClass(JDError.java:845)
+	at com.ibm.as400.access.JDError.throwSQLException(JDError.java:715)
+	at com.ibm.as400.access.AS400JDBCResultSet.beforePositioning(AS400JDBCResultSet.java:1313)
+	at com.ibm.as400.access.AS400JDBCResultSet.next(AS400JDBCResultSet.java:1848)
+	at com.ibm.ws.rsadapter.jdbc.WSJdbcResultSet.next(WSJdbcResultSet.java:2271)
+	at org.hibernate.loader.Loader.processResultSet(Loader.java:939)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:910)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:341)
+	at org.hibernate.loader.Loader.doList(Loader.java:2522)
+	at org.hibernate.loader.Loader.doList(Loader.java:2508)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2338)
+	at org.hibernate.loader.Loader.list(Loader.java:2333)
+	at org.hibernate.loader.custom.CustomLoader.list(CustomLoader.java:338)
+	at org.hibernate.internal.SessionImpl.listCustomQuery(SessionImpl.java:1827)
+	at org.hibernate.internal.AbstractSessionImpl.list(AbstractSessionImpl.java:231)
+	at org.hibernate.internal.SQLQueryImpl.list(SQLQueryImpl.java:157)
+	at com.uscs.ewms.inventory.inventorymaintenance.dao.InventoryLotMaitenanceDAOImpl.getAllHoldCodes(InventoryLotMaitenanceDAOImpl.java:1219)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85)
+	at com.uscs.ewms.logging.LoggingAspect.log(LoggingAspect.java:30)
+	at sun.reflect.GeneratedMethodAccessor87.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:629)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:618)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:168)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy381.getAllHoldCodes(Unknown Source)
+	at com.uscs.ewms.inventory.inventorymaintenance.service.InventoryLotMaitenanceServiceImpl.getAllHoldCodes(InventoryLotMaitenanceServiceImpl.java:700)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport$1.doInTransaction(TransactionAspectSupport.java:305)
+	at org.springframework.transaction.jta.WebSphereUowTransactionManager$UOWActionAdapter.run(WebSphereUowTransactionManager.java:347)
+	at com.ibm.ws.uow.embeddable.EmbeddableUOWManagerImpl.runUnderNewUOW(EmbeddableUOWManagerImpl.java:775)
+	at com.ibm.ws.uow.embeddable.EmbeddableUOWManagerImpl.runUnderUOW(EmbeddableUOWManagerImpl.java:368)
+	at org.springframework.transaction.jta.WebSphereUowTransactionManager.execute(WebSphereUowTransactionManager.java:290)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:299)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:168)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85)
+	at com.uscs.ewms.logging.LoggingAspect.log(LoggingAspect.java:30)
+	at sun.reflect.GeneratedMethodAccessor87.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:629)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:618)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:168)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy764.getAllHoldCodes(Unknown Source)
+	at com.uscs.ewms.inventory.inventorymaintenance.controller.InventoryLotMaitenanceController.getAllHoldCodes(InventoryLotMaitenanceController.java:271)
+	at com.uscs.ewms.inventory.inventorymaintenance.controller.InventoryLotMaitenanceController$$FastClassBySpringCGLIB$$b05a5bf8.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85)
+	at com.uscs.ewms.logging.LoggingAspect.log(LoggingAspect.java:30)
+	at sun.reflect.GeneratedMethodAccessor87.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:629)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:618)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:168)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673)
+	at com.uscs.ewms.inventory.inventorymaintenance.controller.InventoryLotMaitenanceController$$EnhancerBySpringCGLIB$$d90f0b40.getAllHoldCodes(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:575)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:668)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1290)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:778)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:475)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:152)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:94)
+	at org.springframework.web.filter.ShallowEtagHeaderFilter.doFilterInternal(ShallowEtagHeaderFilter.java:110)
+	at com.uscs.ewms.common.security.HttpCacheFilter.doFilterInternal(HttpCacheFilter.java:19)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:207)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:91)
+	at com.uscs.ewms.common.security.EWMSLog4jUsernameFilter.doFilterInternal(EWMSLog4jUsernameFilter.java:35)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:207)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.ConcurrentSessionFilter.doFilter(ConcurrentSessionFilter.java:155)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:207)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:91)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:1021)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1143)
+	at com.ibm.ws.webcontainer.webapp.WebApp.handleRequest(WebApp.java:4983)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.handleRequest(DynamicVirtualHost.java:315)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:1025)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:280)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:967)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:359)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:318)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:471)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:405)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:285)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:66)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:504)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:574)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:929)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1018)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+Dump of callerThis
+Object type = com.ibm.ws.rsadapter.jdbc.WSJdbcResultSet
+  strings[0] = "_______________________________________________________________________"
+  strings[1] = ""
+  strings[2] = "    First Failure Data Capture information for"
+  strings[3] = "          com.ibm.ws.rsadapter.jdbc.WSJdbcResultSet@fd0ca1a"
+  strings[4] = "_______________________________________________________________________"
+  strings[5] = ""
+  strings[6] = "com.ibm.ws.rsadapter.jdbc.WSJdbcResultSet@fd0ca1a
+"
+  strings[7] = "Underlying ResultSet: com.ibm.as400.access.AS400JDBCResultSet@7b4df913"
+  strings[8] = "  CRSR0006
+"
+  strings[9] = "Wrapper State: "
+  strings[10] = "  ACTIVE
+"
+  strings[11] = "Parent wrapper:"
+  strings[12] = "  com.ibm.ws.rsadapter.jdbc.WSJdbcPreparedStatement@408547bd
+"
+  strings[13] = "Child wrapper:
+"
+  strings[14] = "  null"
+  strings[15] = ""
+  strings[16] = "_______________________________________________________________________"
+  strings[17] = ""
+  strings[18] = "    First Failure Data Capture information for"
+  strings[19] = "          com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@6e4e9014"
+  strings[20] = "_______________________________________________________________________"
+  strings[21] = ""
+  strings[22] = "com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@6e4e9014
+"
+  strings[23] = "Transaction Manager global transaction status is"
+  strings[24] = "  STATUS ACTIVE (0)
+"
+  strings[25] = "Underlying Connection: com.ibm.as400.access.AS400JDBCConnectionHandle@1d89304"
+  strings[26] = "  DEVDB2
+"
+  strings[27] = "Key Object:"
+  strings[28] = "  [B@2b3dfcd9
+"
+  strings[29] = "Connection Manager:"
+  strings[30] = "  [ConnectionManager]@3fac1dcc
+JNDI Name <jdbc/ewms>
+shareable <true>
+
+"
+  strings[31] = "ConnectionManager supports lazy association?"
+  strings[32] = "  true
+"
+  strings[33] = "ConnectionManager supports lazy enlistment?"
+  strings[34] = "  true
+"
+  strings[35] = "Handle is reserved? false
+"
+  strings[36] = "AutoCommit value tracked by handle: true
+"
+  strings[37] = "Thread id:"
+  strings[38] = "  null
+"
+  strings[39] = "Wrapper State: "
+  strings[40] = "  ACTIVE
+"
+  strings[41] = "Parent wrapper:"
+  strings[42] = "  null
+"
+  strings[43] = "Child wrapper:
+"
+  strings[44] = "  null"
+  strings[45] = "# of Child Wrappers 1
+"
+  strings[46] = "Child wrappers:
+"
+  strings[47] = "  com.ibm.ws.rsadapter.jdbc.WSJdbcPreparedStatement@408547bd"
+  strings[48] = ""
+  strings[49] = ""
+  strings[50] = "ConnectionRequestInfo:"
+  strings[51] = "  null
+"
+  strings[52] = "_______________________________________________________________________"
+  strings[53] = ""
+  strings[54] = "    First Failure Data Capture information for"
+  strings[55] = "          com.ibm.ws.rsadapter.impl.WSManagedConnectionFactoryImpl@25f8e41d"
+  strings[56] = "_______________________________________________________________________"
+  strings[57] = ""
+  strings[58] = "com.ibm.ws.rsadapter.DSConfig@60fd0315"
+  strings[59] = "[beginTranForResultSetScrollingAPIs, false, beginTranForVendorAPIs, true, commitOrRollbackOnCleanup, null, connectionSharing, MatchOriginalRequest, isolationLevel, 2, jndiName, jdbc/ewms, enableConnectionCasting, false, queryTimeout, null, statementCacheSize, 10, supplementalJDBCTrace, null, syncQueryTimeoutWithTransactionTimeout, false, transactional, true]"
+  strings[60] = "[com.ibm.ws.classloading.internal.AppClassLoader@4312bfa4, true, false, interface javax.sql.XADataSource]"
+  strings[61] = "{extendedDynamic=false, cursorHold=false, secure=false, password=******, translateHex=character, packageCriteria=default, lazyClose=false, translateBinary=false, queryOptimizeGoal=0, maximumScale=31, rollbackCursorHold=false, fullOpen=true, sort=hex, blockSize=32, holdStatements=false, driver=toolbox, packageCCSID=13488, naming=sql, threadUsed=true, metaDataSource=1, errors=basic, savePasswordWhenSerialized=******, cursorSensitivity=asensitive, access=all, packageAdd=true, dataTruncation=true, prefetch=true, serverName=DEVDB2.USCOLD.COM, xaLooselyCoupledSupport=0, packageCache=false, packageError=warning, minimumDivideScale=0, translateBoolean=true, extendedMetaData=false, trueAutoCommit=false, isolationLevelSwitchingSupport=false, bigDecimal=true, packageLibrary=QGPL, lobThreshold=0, bidiImplicitReordering=true, serverTraceCategories=0, dataCompression=true, maximumPrecision=31, blockCriteria=2, holdInputLocators=true, bidiNumericOrdering=false, user=EWMDEVDB2, prompt=true, remarks=system}"
+  strings[62] = "DataSource Implementation Class:"
+  strings[63] = "  class com.ibm.as400.access.AS400JDBCXADataSource
+"
+  strings[64] = "Underlying DataSource Object: com.ibm.as400.access.AS400JDBCXADataSource@24e2f0e7"
+  strings[65] = "  
+"
+  strings[66] = "Log Writer:"
+  strings[67] = "  null
+"
+  strings[68] = "Counter of fatal connection errors on ManagedConnections created by this MCF:"
+  strings[69] = "  0
+"
+  strings[70] = "_______________________________________________________________________"
+  strings[71] = ""
+  strings[72] = "    First Failure Data Capture information for"
+  strings[73] = "          com.ibm.ws.rsadapter.impl.WSRdbManagedConnectionImpl@405c9194"
+  strings[74] = "_______________________________________________________________________"
+  strings[75] = ""
+  strings[76] = "TWO PHASE ENABLED
+"
+  strings[77] = "Connection sharing: "
+  strings[78] = "  MatchOriginalRequest
+"
+  strings[79] = "Transaction State:"
+  strings[80] = "  GLOBAL_TRANSACTION_ACTIVE
+"
+  strings[81] = "Key:"
+  strings[82] = "  [B@2b3dfcd9
+"
+  strings[83] = "Log Writer:"
+  strings[84] = "  null
+"
+  strings[85] = "Subject:"
+  strings[86] = "  null
+"
+  strings[87] = "ManagedConnection:"
+  strings[88] = "  WSRdbManagedConnectionImpl@405c9194
+"
+  strings[89] = "Counter of fatal connection errors for the ManagedConnectionFactory as of the most recent getConnection on this ManagedConnection:"
+  strings[90] = "  0
+"
+  strings[91] = "Default AutoCommit:"
+  strings[92] = "  true
+"
+  strings[93] = "Current AutoCommit:"
+  strings[94] = "  true
+"
+  strings[95] = "Current Isolation:"
+  strings[96] = "  READ COMMITTED (2)
+"
+  strings[97] = "Isolation level has changed? :"
+  strings[98] = "  false
+"
+  strings[99] = "Support isolation level switching: "
+  strings[100] = "  false
+"
+  strings[101] = "The gssCredential is: 
+"
+  strings[102] = "null
+"
+  strings[103] = "The gssName is: 
+"
+  strings[104] = "null
+"
+  strings[105] = "Catalog, IsReadOnly, TypeMap, Schema, or NetworkTimeout has changed? :"
+  strings[106] = "  false
+"
+  strings[107] = "Default Holdability:"
+  strings[108] = "  CLOSE CURSORS AT COMMIT (2)
+"
+  strings[109] = "Current Holdability:"
+  strings[110] = "  CLOSE CURSORS AT COMMIT (2)
+"
+  strings[111] = "Holdability value has changed? :"
+  strings[112] = "  false
+"
+  strings[113] = "Thread ID:"
+  strings[114] = "  null
+"
+  strings[115] = "Lazily enlisted in the current transaction? :"
+  strings[116] = "  true
+"
+  strings[117] = "Underlying Connection Object: com.ibm.as400.access.AS400JDBCConnectionHandle@1d89304"
+  strings[118] = "  DEVDB2
+"
+  strings[119] = "Underlying PooledConnection Object: com.ibm.as400.access.AS400JDBCXAConnection@7bffcbca"
+  strings[120] = "  com.ibm.as400.access.AS400JDBCXAConnection@e1f3660
+"
+  strings[121] = "SQLJ Default Context: null"
+  strings[122] = "  null
+"
+  strings[123] = "Fatal connection error was detected? :"
+  strings[124] = "  false
+"
+  strings[125] = "Currently cleaning up handles? :"
+  strings[126] = "  false
+"
+  strings[127] = "Last ConnectionEvent sent for this ManagedConnection:
+"
+  strings[128] = "  com.ibm.ws.rsadapter.impl.WSConnectionEvent@194510a4"
+  strings[129] = "  Connection Handle: com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@11a85d32"
+  strings[130] = "  Event ID: CONNECTION CLOSED (1)"
+  strings[131] = "  Exception: null"
+  strings[132] = ""
+  strings[133] = "Connection Event Listeners:
+"
+  strings[134] = "  com.ibm.ejs.j2c.ConnectionEventListener@22fef228"
+  strings[135] = ""
+  strings[136] = "Maximum Handle List Size: 15
+"
+  strings[137] = "Handle Count: 1
+"
+  strings[138] = "Handles:
+"
+  strings[139] = "  com.ibm.ws.rsadapter.jdbc.WSJdbcConnection@6e4e9014"
+  strings[140] = "  null"
+  strings[141] = "  null"
+  strings[142] = "  null"
+  strings[143] = "  null"
+  strings[144] = "  null"
+  strings[145] = "  null"
+  strings[146] = "  null"
+  strings[147] = "  null"
+  strings[148] = "  null"
+  strings[149] = "  null"
+  strings[150] = "  null"
+  strings[151] = "  null"
+  strings[152] = "  null"
+  strings[153] = "  null"
+  strings[154] = ""
+  strings[155] = "State Manager:"
+  strings[156] = "  com.ibm.ws.rsadapter.impl.WSStateManager@27dacc26
+"
+  strings[157] = "_______________________________________________________________________"
+  strings[158] = ""
+  strings[159] = "    First Failure Data Capture information for"
+  strings[160] = "          com.ibm.ws.rsadapter.impl.WSRdbXaResourceImpl@162b2849"
+  strings[161] = "_______________________________________________________________________"
+  strings[162] = ""
+  strings[163] = "ManagedConnection:"
+  strings[164] = "  WSRdbManagedConnectionImpl@405c9194
+"
+  strings[165] = "Underlying XAResource Object: com.ibm.as400.access.AS400JDBCXAResource@4539b673"
+  strings[166] = "  DEVDB2-XA:RMID#49161
+"
+  strings[167] = "Xid: "
+  strings[168] = "  com.ibm.tx.jta.impl.XidImpl@1083734e
+                                 {XidImpl: formatId(57415344), gtrid_length(36), bqual_length(54),
+data(0000015e5d038e0800000002727c627c35665c3b469f84e49debb5243c3c7dda1a40edd20000015e5d038e0800000002727c627c35665c3b469f84e49debb5243c3c7dda1a40edd2000000010000000000000000000000000001)}
+                                 Global Transaction ID: 00 00 01 5e 5d 03 8e 08 00 00 00 02 72 7c 62 7c 35 66 5c 3b 46 9f 84 e4 9d eb b5 24 3c 3c 7d da 1a 40 ed d2 
+                                 Branch Qualifier:      00 00 01 5e 5d 03 8e 08 00 00 00 02 72 7c 62 7c 35 66 5c 3b 46 9f 84 e4 9d eb b5 24 3c 3c 7d da 1a 40 ed d2 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 01 
+                                 Format ID:             1463898948
+"
+  strings[169] = "SPI LocalTransaction :"
+  strings[170] = "  null
+"
+  strings[171] = "Statement Cache:"
+    
+com.ibm.ws.rsadapter.impl.CacheMap@61493684
+Number of entries:   10
+Maximum entries:     10
+Number of buckets:   13
+Maximum bucket size: 5
+Number of discards:  46
+
+BUCKET SIZE PREV NEXT
+  000  001  006  005
+                      2eef3384 CSTMT: {call MIGSRCINN.ATP1(?,?,?,?,?,?,null,null,null,515,null,null)} 1003 1007 2 2
+  001  000  013  013
+  002  000  013  013
+  003  000  013  013
+  004  000  013  013
+  005  003  000  014
+                      266d8204 CSTMT: {call MIGSRCINN.ATP1(?,?,?,?,?,?,null,null,null,3310,null,null)} 1003 1007 2 2
+                      2d7f8c84 PSTMT: WITH BASE_DATA 	(lotsysid,whsysid,custsysid,customer,prodsysid,prodcode, 		proddesc,brndcodesysid,brandcode,pullseqprefix,pulldt,productiondt,expiredt,sellbydt, 		codedate,codedatetype,onhandqty,varience,rcvdqty,holdcode,holddesc,ipdsysid) AS ( 	SELECT 		ipd.USCS_LOT_NUMBER_SYSID, 		ipd.WHSE_SYSID, 		ipd.CUST_SYSID, 		concat(CONCAT(ac.ACCT_NUMBER, ' - '), ec.cust_name) as customer, 		ipd.PROD_SYSID, 		ep.PROD_CODE, 		wp.PROD_DESC, 		ipd.BRAND_CODE_SYSID, 		branddtl.CODE_DESC, 		ipd.PULL_SEQ_PREFIX, 		ipd.PULL_SEQ_DT, 		ipd.PRODUCTION_DATE, 		ipd.EXPIRE_DATE, 		ipd.SELL_BY_DATE, 		ipd.CODE_DATE, 		wpdtl.CODE_DESC, 		ipd.ONHAND_QTY, 		ipd.LIMBO_QTY, 		ipd.RECIEVED_QTY, 		hlddtl.DTL_CODE, 		hlddtl.CODE_DESC, 		ipd.INVTRY_PALLET_DTL_SYSID 	from MIGSRCINN.INVTRY_PALLET_DTL ipd 	LEFT join MIGSRCINN.DTL_CODE pltsts 			ON ipd.PALLET_STATUS_SYSID = "pltsts.DTL_CODE_SYSID 	LEFT join MIGSRCINN.ACCT_TYPE ac 			ON ipd.CUST_SYSID = ac.ACCT_SYSID 	LEFT JOIN MIGSRCINN.ENT_CUST ec 			ON IPD.CUST_SYSID = ec.CUST_SYSID 	LEFT JOIN MIGSRCINN.ENT_PROD ep 			ON ipd.PROD_SYSID = ep.PROD_SYSID 	LEFT JOIN MIGSRCINN.WHSE_PROD wp 			ON ipd.WHSE_SYSID = wp.WHSE_SYSID 			AND ipd.PROD_SYSID = wp.PROD_SYSID 	LEFT JOIN MIGSRCINN.DTL_CODE wpdtl 			ON wp.CODE_DATE_TYPE_SYSID = wpdtl.DTL_CODE_SYSID 	LEFT JOIN MIGSRCINN.DTL_CODE branddtl 			ON ipd.BRAND_CODE_SYSID = branddtl.DTL_CODE_SYSID 	LEFT JOIN MIGSRCINN.DTL_CODE howstrddtl 			ON ipd.HOW_STORED_SYSID = howstrddtl.DTL_CODE_SYSID 	LEFT JOIN MIGSRCINN.PALLET_HOLD_CODE plthld 			ON plthld.INVTRY_PALLET_DTL_SYSID = ipd.INVTRY_PALLET_DTL_SYSID 	LEFT JOIN MIGSRCINN.DTL_CODE hlddtl 			ON plthld.HOLD_CODE_SYSID = hlddtl.DTL_CODE_SYSID 	WHERE 		ipd.WHSE_SYSID = ? 		AND ipd.CUST_SYSID =? 		AND ipd.ONHAND_QTY > 0 ), LOT_LEVEL_DATA (lotsysid,lotnumber,receivedFrom,lastModified,pf,billpf,tare,twf, 		shelflife,strgchrgflag,strgrate,rcrngchrgflag,rcrngchrgrate,hndlchrgflag, 		hndlchrgrate,stckuomsysid,menifestnetwt,cube,orignlrcvddate,unitwt, 		stckuom,notesysid,cdtcktnumber,commodity,strghow,rcrngchrghow,hndlchrghow, 		recnumber,recvddate)AS ( 	SELECT 		lh.USCS_LOT_NUMBER_SYSID, 		lh.USCS_LOT_NUMBER, 		concat(CONCAT(recfrmacc.ACCT_NUMBER, ' - '), recfrmCust.CUST_NAME) AS receivedFrom, 		CONCAT(CONCAT(CONCAT(usr.USER_FIRST_NAME, ' '),usr.USER_LAST_NAME),  CONCAT((''),VARCHAR_FORMAT(lh.UPDATE_TS,'MM/DD/YY HH24:MI'))) AS lastModified, 		lh.PALLET_FACTOR, 		lh.BILLNG_PALLET_FACTOR, 		lh.TARE, 		lh.TAKE_WEIGHT_FLAG, 		lh.SHELF_LIFE, 		lh.STORGE_CHARGE_FLAG, 		lh.STORGE_RATE, 		lh.RECCURING_CHARGE_FLAG, 		lh.RECURR_RATE, 		lh.HNDLNG_CHARGE_FLAG, 		lh.HNDLNG_RATE, 		lh.STOCK_UOM_SYSID, 		lh.MANIFEST_NETWGT, 		lh.CUBE, 		lh.ORIG_RCVD_DT, 		lh.UNIT_WEIGHT, 		stckuomdtl.CODE_DESC, 		lh.NOTES_SYSID, 		lh.CROSS_DOCK_TICKET_NUMBER, 		concat(concat(cmdtydtl.DTL_CODE, ' - '), cmdtydtl.CODE_DESC) AS commodity, 		strghowdtl.DTL_CODE, 		rcrngchrgdtl.DTL_CODE, 		hndlgchrghow.DTL_CODE, 		rec.REC_NUMBER, 		rec.RCVD_DT 	FROM MIGSRCINN.LOT_HEADER lh 	LEFT JOIN MIGSRCINN.REC rec 			ON lh.REC_NUMBER_SYSID = rec.REC_NUMBER_SYSID 	LEFT JOIN MIGSRCINN.ENT_CUST recfrmCust 			ON rec.RECEIVED_FROM_SYSID = recfrmCust.CUST_SYSID 	LEFT JOIN MIGSRCINN.ACCT_TYPE recfrmacc 			ON recfrmCust.CUST_SYSID = recfrmacc.ACCT_SYSID 	LEFT OUTER JOIN MIGSRCINN.USER usr 			ON lh.UPDATE_USERID = usr.LOGIN_USER_NAME 	LEFT join MIGSRCINN.DTL_CODE stckuomdtl 			ON lh.STOCK_UOM_SYSID = stckuomdtl.DTL_CODE_SYSID 	LEFT join MIGSRCINN.DTL_CODE cmdtydtl 			ON lh.CMDTY_SYSID = cmdtydtl.DTL_CODE_SYSID 	LEFT join MIGSRCINN.DTL_CODE strghowdtl 			ON lh.STORAGE_RATE_HOW_CODE_SYSID = strghowdtl.DTL_CODE_SYSID 	LEFT join MIGSRCINN.DTL_CODE rcrngchrgdtl 			ON lh.HANDLING_RATE_HOW_CODE_SYSID= rcrngchrgdtl.DTL_CODE_SYSID 	LEFT join MIGSRCINN.DTL_CODE hndlgchrghow 			ON lh.HANDLING_RATE_HOW_CODE_SYSID= hndlgchrghow.DTL_CODE_SYSID 	WHERE 		lh.WHSE_SYSID = ? 		AND lh.USCS_LOT_NUMBER_SYSID in(SELECT DISTINCT lotsysid FROM BASE_DATA) ), LOT_LEVEL_INVENTORY_DATA(lotsysid,whsysid,custsysid,customer,prodsysid,prodcode, 		proddesc,brndcodesysid,brandcode,codedatetype,onhandqty,varience,rcvdqty)AS ( 	SELECT 		subquery.lotsysid,whsysid,custsysid,customer,prodsysid,prodcode, 		proddesc,brndcodesysid,brandcode,codedatetype, 		SUM(subquery.onhandqty), 		SUM(subquery.varience), 		SUM(subquery.rcvdqty) 	FROM 		( 			SELECT DISTINCT 				lotsysid,ipdsysid,whsysid,custsysid,customer,prodsysid,prodcode, 				proddesc,brndcodesysid,brandcode,codedatetype,onhandqty,varience,rcvdqty 			FROM 				BASE_DATA 			WHERE lotsysid in (SELECT DISTINCT lotsysid FROM LOT_LEVEL_DATA) 		)subquery 	GROUP BY 		subquery.lotsysid,whsysid,custsysid,customer,prodsysid, 		prodcode,proddesc,brndcodesysid,brandcode,codedatetype ), PULL_SEQ_PREFIX_DATA(lotsysid,pullseqprefix) AS ( 	SELECT 		subquery.lotsysid, 		SUBSTR(XMLSERIALIZE(XMLAGG(XMLTEXT(CONCAT(', ', pullseqprefix))) as VARCHAR(1024)), 3) as pullseqprefix 	FROM 		( 			SELECT DISTINCT 				lotsysid,pullseqprefix 			FROM 				BASE_DATA 		)subquery 	GROUP BY 		subquery.lotsysid ), PULL_DATE_DATA(lotsysid,pulldt) AS ( 	SELECT 		subquery.lotsysid, 		SUBSTR(XMLSERIALIZE(XMLAGG(XMLTEXT(CONCAT(', ', subquery.pulldt))) as VARCHAR(1024)), 3) as pulldt 	FROM 		( 			SELECT DISTINCT 				lotsysid,pulldt 			FROM 				BASE_DATA 		)subquery 	GROUP BY 		subquery.lotsysid ), PRODUCTION_DATE_DATA(lotsysid,productiondt) AS ( 	SELECT 		subquery.lotsysid, 		SUBSTR(XMLSERIALIZE(XMLAGG(XMLTEXT(CONCAT(', ', subquery.productiondt))) as VARCHAR(1024)), 3) as productiondt 	FROM 		( 			SELECT DISTINCT 				lotsysid,productiondt 			FROM 				BASE_DATA 		)subquery 	GROUP BY 		subquery.lotsysid ), EXPIRE_DATE_DATA(lotsysid,expiredt) AS ( 	SELECT 		subquery.lotsysid, 		SUBSTR(XMLSERIALIZE(XMLAGG(XMLTEXT(CONCAT(', ', subquery.expiredt))) as VARCHAR(1024)), 3) as expiredt 	FROM 		( 			SELECT DISTINCT 				lotsysid,expiredt 			FROM 				BASE_DATA 		)subquery 	GROUP BY 		subquery.lotsysid ), SELLBY_DATE_DATA(lotsysid,sellbydt) AS ( 	SELECT 		subquery.lotsysid, 		SUBSTR(XMLSERIALIZE(XMLAGG(XMLTEXT(CONCAT(', ', subquery.sellbydt))) as VARCHAR(1024)), 3) as sellbydt 	FROM 		( 			SELECT DISTINCT 				lotsysid,sellbydt 			FROM 				BASE_DATA 		)subquery 	GROUP BY 		subquery.lotsysid ), CODE_DATE_DATA(lotsysid,codedate) AS ( 	SELECT 		subquery.lotsysid, 		SUBSTR(XMLSERIALIZE(XMLAGG(XMLTEXT(CONCAT(', ', subquery.codedate))) as VARCHAR(1024)), 3) as codedate 	FROM 		( 			SELECT DISTINCT 				lotsysid,codedate 			FROM 				BASE_DATA 		)subquery 	GROUP BY 		subquery.lotsysid ), HOLD_CODE_DATA(lotsysid,holdcodes) AS ( 	SELECT 		subquery.lotsysid, 		SUBSTR(XMLSERIALIZE(XMLAGG(XMLTEXT(CONCAT(', ', CONCAT(subquery.holdcode, 		CONCAT(' - ', subquery.holddesc))))) as VARCHAR(1024)), 3) as holdcodes 	FROM 		( 			SELECT DISTINCT 				lotsysid,holdcode,holddesc 			FROM 				BASE_DATA 		)subquery 	GROUP BY 		subquery.lotsysid ), PIP_QTY_DATA(lotsysid,pipqty) AS ( 	SELECT 		ipd.USCS_LOT_NUMBER_SYSID, 		SUM(ptd.PICKED_QTY) PIP_QTY 	FROM MIGSRCINN.PICK_TASK_DTL ptd 	INNER JOIN MIGSRCINN.TASK_HEADER th 			ON ptd.TASK_NUMBER_SYSID = th.TASK_NUMBER_SYSID 	INNER JOIN MIGSRCINN.DTL_CODE tskstsdtl 			ON th.TASK_STATUS_SYSID = tskstsdtl.DTL_CODE_SYSID 	INNER JOIN MIGSRCINN.INVTRY_PALLET_DTL ipd 			ON ptd.INVTRY_PALLET_DTL_SYSID = ipd.INVTRY_PALLET_DTL_SYSID 	WHERE 		ptd.PICKED_QTY > 0 		AND tskstsdtl.DTL_CODE != '10' 	    AND ipd.INVTRY_PALLET_DTL_SYSID in (SELECT DISTINCT ipdsysid from BASE_DATA) GROUP BY 	ipd.USCS_LOT_NUMBER_SYSID ), RESERVE_QTY_DATA(lotsysid,reserveqty) AS ( 	SELECT 		ipd.USCS_LOT_NUMBER_SYSID, 		SUM(ptd.QTY_TO_PICK) TASK_RESERVE_QTY 	FROM MIGSRCINN.PICK_TASK_DTL ptd 	INNER JOIN MIGSRCINN.TASK_HEADER th 			ON ptd.TASK_NUMBER_SYSID = th.TASK_NUMBER_SYSID 	INNER JOIN MIGSRCINN.DTL_CODE tskstsdtl 			ON th.TASK_STATUS_SYSID = tskstsdtl.DTL_CODE_SYSID 	INNER JOIN MIGSRCINN.INVTRY_PALLET_DTL ipd 			ON ptd.INVTRY_PALLET_DTL_SYSID = ipd.INVTRY_PALLET_DTL_SYSID 	WHERE 		ptd.PICKED_QTY = 0 		AND PROJECTION_FLAG = 'N' 		AND QTY_TO_PICK >0 		AND tskstsdtl.DTL_CODE != '10' 		AND ipd.INVTRY_PALLET_DTL_SYSID in (SELECT DISTINCT ipdsysid from BASE_DATA) 	GROUP BY 		ipd.USCS_LOT_NUMBER_SYSID ), ORDER_QTY_DATA(lotsysid,orderqty) AS ( 	SELECT 		lh.USCS_LOT_NUMBER_SYSID, 		SUM(od.ORDERED_QTY) AS ORDERED_QTY 	FROM MIGSRCINN.ORDER_DTL od 	INNER JOIN MIGSRCINN.DTL_CODE moedtl 			ON od.METHOD_OF_DTL_ENTRY_SYSID = moedtl.DTL_CODE_SYSID 	INNER JOIN MIGSRCINN.ORDER o 			ON od.DLVRY_TICKET_SYSID = o.DLVRY_TICKET_SYSID 	INNER JOIN MIGSRCINN.DTL_CODE ordstsdtl 			ON o.ORDER_STATUS_SYSID = ordstsdtl.DTL_CODE_SYSID 	INNER JOIN MIGSRCINN.LOT_HEADER lh 			ON od.USCS_LOT_NUMBER = lh.USCS_LOT_NUMBER 			AND od.WHSE_SYSID = lh.WHSE_SYSID 	WHERE 		moedtl.DTL_CODE = 'LOT' 		AND ordstsdtl.DTL_CODE != '10' 		AND lh.USCS_LOT_NUMBER_SYSID in (SELECT DISTINCT lotsysid from BASE_DATA) 	GROUP BY 		lh.USCS_LOT_NUMBER_SYSID ) SELECT 	COUNT(*) FROM 	LOT_LEVEL_INVENTORY_DATA lotinvdata INNER JOIN 	LOT_LEVEL_DATA lotdata 		ON lotinvdata.lotsysid = lotdata.lotsysid LEFT JOIN 	PULL_SEQ_PREFIX_DATA pspd 		ON lotinvdata.lotsysid = pspd.lotsysid LEFT JOIN 	PULL_DATE_DATA pdd 		ON lotinvdata.lotsysid = pdd.lotsysid LEFT JOIN 	PRODUCTION_DATE_DATA prddatedata 		ON lotinvdata.lotsysid = prddatedata.lotsysid LEFT JOIN 	EXPIRE_DATE_DATA expire 		ON lotinvdata.lotsysid = expire.lotsysid LEFT JOIN 	SELLBY_DATE_DATA sellby 		ON lotinvdata.lotsysid = sellby.lotsysid LEFT JOIN 	CODE_DATE_DATA cddt 		ON lotinvdata.lotsysid = cddt.lotsysid LEFT JOIN 	HOLD_CODE_DATA hlddata 		ON lotinvdata.lotsysid = hlddata.lotsysid LEFT JOIN 	PIP_QTY_DATA pip 		ON lotinvdata.lotsysid = pip.lotsysid LEFT JOIN 	RESERVE_QTY_DATA reserve 		ON lotinvdata.lotsysid = reserve.lotsysid LEFT JOIN 	ORDER_QTY_DATA ordrqty 		ON lotinvdata.lotsysid = ordrqty.lotsysid  1003 1007 2 0 2
+                      5aa72b9 PSTMT:  select count(*) from MIGSRCINN.INVTRY_PALLET_DTL ipd left outer join MIGSRCINN.DTL_CODE dc on ipd.PALLET_STATUS_SYSID=dc.DTL_CODE_SYSID where ipd.USCS_LOT_NUMBER_SYSID = ? and  dc.DTL_CODE = 'A'  1003 1007 2 0 2
+  006  003  008  000
+                      520e029b PSTMT: SELECT ipd.INVTRY_PALLET_DTL_SYSID from MIGSRCINN.INVTRY_PALLET_DTL ipd where ipd.whse_sysid=98403 and ipd.prod_sysid=3844 and ipd.uscs_lot_number_sysid=3321 1003 1007 2 0 2
+                      18b9d77c PSTMT: SELECT ipd.INVTRY_PALLET_DTL_SYSID from MIGSRCINN.INVTRY_PALLET_DTL ipd where ipd.whse_sysid=98403 and ipd.prod_sysid=3876 and ipd.uscs_lot_number_sysid=3311 1003 1007 2 0 2
+                      49f37343 PSTMT: select dtlcode0_.DTL_CODE as col_0_0_, dtlcode0_.CODE_DESC as col_1_0_ from MIGSRCINN.DTL_CODE dtlcode0_ where dtlcode0_.DTL_CODE_SYSID=? 1003 1007 2 0 2
+  007  000  013  013
+  008  003  013  006
+                      1f1aef7e CSTMT: {call MIGSRCINN.ATP1(?,?,?,?,?,?,null,null,null,84657,null,null)} 1003 1007 2 2
+                      3d222cdc CSTMT: {call MIGSRCINN.ATP1(?,?,?,?,?,?,null,null,null,82376,null,null)} 1003 1007 2 2
+                      6b761e33 PSTMT: select whseproddi0_.PROD_SYSID as PROD1_362_0_, whseproddi0_.TMPLT_NAME as TMPLT2_362_0_, whseproddi0_.UOM_LEVEL as UOM3_362_0_, whseproddi0_.WHSE_SYSID as WHSE4_362_0_, uomtmpltle1_.UOM_LEVEL as UOM1_319_1_, uomtmpltle1_.TMPLT_NAME as TMPLT9_319_1_, uomtmplt2_.TMPLT_NAME as TMPLT1_318_2_, whseproddi0_.CREATE_TS as CREATE5_362_0_, whseproddi0_.CREATE_USERID as CREATE6_362_0_, whseproddi0_.UPDATE_TS as UPDATE7_362_0_, whseproddi0_.UPDATE_USERID as UPDATE8_362_0_, whseproddi0_.VER_NUMBER as VER9_362_0_, whseproddi0_.CNVRSN_FACTOR as CNVRSN10_362_0_, whseproddi0_.PROD_HEIGHT as PROD11_362_0_, whseproddi0_.PROD_LENGTH as PROD12_362_0_, whseproddi0_.PROD_WIDTH as PROD13_362_0_, whseproddi0_.TARE as TARE14_362_0_, whseproddi0_.UNIT_WEIGHT as UNIT15_362_0_, uomtmpltle1_.CREATE_TS as CREATE2_319_1_, uomtmpltle1_.CREATE_USERID as CREATE3_319_1_, uomtmpltle1_.UPDATE_TS as UPDATE4_319_1_, uomtmpltle1_.UPDATE_USERID as UPDATE5_319_1_, uomtmpltle1_.VER_NUMBER as VER6_319_1_, uomtmpltle1_.MSRMNT_SYSID as MSRMNT7_319_1_, uomtmpltle1_.UOM_SYSID as UOM8_319_1_, uomtmplt2_.CREATE_TS as CREATE2_318_2_, uomtmplt2_.CREATE_USERID as CREATE3_318_2_, uomtmplt2_.UPDATE_TS as UPDATE4_318_2_, uomtmplt2_.UPDATE_USERID as UPDATE5_318_2_, uomtmplt2_.VER_NUMBER as VER6_318_2_, uomtmplt2_.STATUS_SYSID as STATUS7_318_2_ from MIGSRCINN.WHSE_PROD_DIM whseproddi0_ left outer join MIGSRCINN.UOM_TMPLT_LEVEL uomtmpltle1_ on whseproddi0_.UOM_LEVEL=uomtmpltle1_.UOM_LEVEL and whseproddi0_.TMPLT_NAME=uomtmpltle1_.TMPLT_NAME left outer join MIGSRCINN.UOM_TMPLT uomtmplt2_ on uomtmpltle1_.TMPLT_NAME=uomtmplt2_.TMPLT_NAME where whseproddi0_.PROD_SYSID=? and whseproddi0_.WHSE_SYSID=? order by whseproddi0_.UOM_LEVEL 1003 1007 2 0 2
+  009  000  013  013
+  010  000  013  013
+  011  000  013  013
+  012  000  013  013
+  013  LRU       008
+  014  MRU  005
+
+"
+  strings[173] = "_______________________________________________________________________"
+  strings[174] = ""
+  strings[175] = "    First Failure Data Capture information for"
+  strings[176] = "          com.ibm.ws.rsadapter.impl.WSConnectionRequestInfoImpl@394d1175"
+  strings[177] = "_______________________________________________________________________"
+  strings[178] = ""
+  changable CRI = ""
+  strings[180] = "  true
+"
+  strings[181] = "User Name:"
+  strings[182] = "  null
+"
+  strings[183] = "Password:"
+  strings[184] = "  null
+"
+  strings[185] = "Isolation Level:"
+  strings[186] = "  READ COMMITTED (2)
+"
+  strings[187] = "Catalog:"
+  strings[188] = "  null
+"
+  strings[189] = "Schema:"
+  strings[190] = "  null
+"
+  strings[191] = "Is Read Only?"
+  strings[192] = "  null
+"
+  strings[193] = "Type Map:"
+  strings[194] = "  null
+"
+  strings[195] = "Cursor Holdability:"
+  strings[196] = "  DEFAULT CURSOR HOLDABILITY VALUE (0)
+"
+  strings[197] = "Config ID: 1
+"
+  strings[198] = "Hash Code:"
+  strings[199] = "  1
+"
+  strings[200] = "Support isolation switching on connection:"
+  strings[201] = "  false
+"
+  gssName = "
+"
+  strings[203] = "null
+"
+  gssCredential = "
+"
+  strings[205] = "null
+"
+  oracle properties = "
+"
+  strings[207] = "null
+"
+  strings[208] = "_______________________________________________________________________"
+  strings[209] = ""
+  strings[210] = "    First Failure Data Capture information for"
+  strings[211] = "          com.ibm.ws.rsadapter.impl.WSManagedConnectionFactoryImpl@25f8e41d"
+  strings[212] = "_______________________________________________________________________"
+  strings[213] = ""
+  strings[214] = "com.ibm.ws.rsadapter.DSConfig@60fd0315"
+  strings[215] = "[beginTranForResultSetScrollingAPIs, false, beginTranForVendorAPIs, true, commitOrRollbackOnCleanup, null, connectionSharing, MatchOriginalRequest, isolationLevel, 2, jndiName, jdbc/ewms, enableConnectionCasting, false, queryTimeout, null, statementCacheSize, 10, supplementalJDBCTrace, null, syncQueryTimeoutWithTransactionTimeout, false, transactional, true]"
+  strings[216] = "[com.ibm.ws.classloading.internal.AppClassLoader@4312bfa4, true, false, interface javax.sql.XADataSource]"
+  strings[217] = "{extendedDynamic=false, cursorHold=false, secure=false, password=******, translateHex=character, packageCriteria=default, lazyClose=false, translateBinary=false, queryOptimizeGoal=0, maximumScale=31, rollbackCursorHold=false, fullOpen=true, sort=hex, blockSize=32, holdStatements=false, driver=toolbox, packageCCSID=13488, naming=sql, threadUsed=true, metaDataSource=1, errors=basic, savePasswordWhenSerialized=******, cursorSensitivity=asensitive, access=all, packageAdd=true, dataTruncation=true, prefetch=true, serverName=DEVDB2.USCOLD.COM, xaLooselyCoupledSupport=0, packageCache=false, packageError=warning, minimumDivideScale=0, translateBoolean=true, extendedMetaData=false, trueAutoCommit=false, isolationLevelSwitchingSupport=false, bigDecimal=true, packageLibrary=QGPL, lobThreshold=0, bidiImplicitReordering=true, serverTraceCategories=0, dataCompression=true, maximumPrecision=31, blockCriteria=2, holdInputLocators=true, bidiNumericOrdering=false, user=EWMDEVDB2, prompt=true, remarks=system}"
+  strings[218] = "DataSource Implementation Class:"
+  strings[219] = "  class com.ibm.as400.access.AS400JDBCXADataSource
+"
+  strings[220] = "Underlying DataSource Object: com.ibm.as400.access.AS400JDBCXADataSource@24e2f0e7"
+  strings[221] = "  
+"
+  strings[222] = "Log Writer:"
+  strings[223] = "  null
+"
+  strings[224] = "Counter of fatal connection errors on ManagedConnections created by this MCF:"
+  strings[225] = "  0
+"
+

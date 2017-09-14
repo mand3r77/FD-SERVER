@@ -1,0 +1,6 @@
+
+ Index  Count  Time of first Occurrence    Time of last Occurrence     Exception SourceId ProbeId
+------+------+---------------------------+---------------------------+---------------------------
+     0      2    9/11/17 11:02:46:008 EDT    9/11/17 11:02:46:233 EDT org.springframework.web.util.NestedServletException com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter 82
+
+------+------+---------------------------+---------------------------+---------------------------

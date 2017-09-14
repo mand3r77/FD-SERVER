@@ -1,0 +1,46 @@
+------Start of DE processing------ = [9/7/17 14:37:06:582 EDT]
+Exception = java.sql.SQLException
+Source = com.ibm.ws.rsadapter.impl.DB2iToolboxHelper
+probeid = 1298
+Stack Dump = java.sql.SQLException: The application requester cannot establish the connection. (DEVDB2.USCOLD.COM)
+	at com.ibm.as400.access.JDError.createSQLExceptionSubClass(JDError.java:830)
+	at com.ibm.as400.access.JDError.throwSQLException(JDError.java:559)
+	at com.ibm.as400.access.AS400JDBCConnection.setProperties(AS400JDBCConnection.java:3391)
+	at com.ibm.as400.access.AS400JDBCDataSource.getConnection(AS400JDBCDataSource.java:756)
+	at com.ibm.as400.access.AS400JDBCDataSource.getConnection(AS400JDBCDataSource.java:614)
+	at com.ibm.as400.access.AS400JDBCXADataSource.getXAConnection(AS400JDBCXADataSource.java:128)
+	at com.ibm.ws.rsadapter.impl.DatabaseHelper$1.run(DatabaseHelper.java:950)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.ibm.ws.rsadapter.impl.DatabaseHelper.getPooledConnection(DatabaseHelper.java:962)
+	at com.ibm.ws.rsadapter.impl.WSManagedConnectionFactoryImpl.getConnection(WSManagedConnectionFactoryImpl.java:794)
+	at com.ibm.ws.rsadapter.impl.WSManagedConnectionFactoryImpl.createManagedConnection(WSManagedConnectionFactoryImpl.java:650)
+	at com.ibm.ws.jca.cm.AbstractConnectionFactoryService.getXAResource(AbstractConnectionFactoryService.java:377)
+	at com.ibm.tx.jta.impl.XARecoveryData.getXARminst(XARecoveryData.java:366)
+	at com.ibm.tx.jta.impl.XARecoveryData.recover(XARecoveryData.java:492)
+	at com.ibm.tx.jta.impl.PartnerLogTable.recover(PartnerLogTable.java:402)
+	at com.ibm.tx.jta.impl.RecoveryManager.resync(RecoveryManager.java:1483)
+	at com.ibm.tx.jta.impl.RecoveryManager.performResync(RecoveryManager.java:2213)
+	at com.ibm.tx.jta.impl.RecoveryManager.run(RecoveryManager.java:2168)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.UnknownHostException: DEVDB2.USCOLD.COM
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.ibm.as400.access.PortMapper.getSocketConnection(PortMapper.java:266)
+	at com.ibm.as400.access.PortMapper.getServerSocket(PortMapper.java:161)
+	at com.ibm.as400.access.AS400ImplRemote.signonConnect(AS400ImplRemote.java:2588)
+	at com.ibm.as400.access.AS400ImplRemote.signon(AS400ImplRemote.java:2503)
+	at com.ibm.as400.access.AS400.sendSignonRequest(AS400.java:3351)
+	at com.ibm.as400.access.AS400.promptSignon(AS400.java:2915)
+	at com.ibm.as400.access.AS400.signon(AS400.java:4246)
+	at com.ibm.as400.access.AS400.connectService(AS400.java:1336)
+	at com.ibm.as400.access.AS400JDBCConnection.setProperties(AS400JDBCConnection.java:3383)
+	... 16 more
+
+Dump of callerThis
+null

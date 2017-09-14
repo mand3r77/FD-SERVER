@@ -1,0 +1,112 @@
+********************************************************************************
+product = WebSphere Application Server 17.0.0.2 (wlp-1.0.17.cl170220170523-1818)
+wlp.install.dir = C:/EWM_/EWM-BE-SERVER/
+java.home = C:\Program Files\Java\jre1.8.0_144
+java.version = 1.8.0_144
+java.runtime = Java(TM) SE Runtime Environment (1.8.0_144-b01)
+os = Windows 8 (10.0; amd64) (en_US)
+process = 10716@voorhees165
+********************************************************************************
+[9/12/17 11:26:45:562 EDT] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0001I: The server defaultServer has been launched.
+[9/12/17 11:26:45:592 EDT] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0100I: This product is licensed for development, and limited production use. The full license terms can be viewed here: https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/license/base_ilan/ilan/17.0.0.2/lafiles/en.html
+[9/12/17 11:26:58:066 EDT] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           I CWWKE0002I: The kernel started after 13.536 seconds
+[9/12/17 11:26:58:781 EDT] 0000001b com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0007I: Feature update started.
+[9/12/17 11:27:06:103 EDT] 00000014 com.ibm.ws.app.manager.internal.monitor.DropinMonitor        A CWWKZ0058I: Monitoring dropins for applications. 
+[9/12/17 11:27:06:387 EDT] 0000001c com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0219I: TCP Channel defaultHttpEndpoint has been started and is now listening for requests on host 192.168.56.1  (IPv4: 192.168.56.1) port 9081.
+[9/12/17 11:27:06:774 EDT] 00000014 gService-79-com.ibm.ws.org.apache.geronimo.osgi.registry.1.1 I SPI-Provider Manifest header found in bundle: com.ibm.ws.xlxp.1.5.3 Bundle:com.ibm.ws.org.apache.geronimo.osgi.registry.1.1(id=79)   
+[9/12/17 11:27:08:279 EDT] 0000001f com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application web.
+[9/12/17 11:27:38:294 EDT] 0000001c com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0022W: Application web has not started in 30.015 seconds.
+[9/12/17 11:27:38:332 EDT] 0000001b com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0012I: The server installed the following features: [servlet-3.0, jsp-2.2, jaxb-2.2, monitor-1.0, jndi-1.0, localConnector-1.0, jdbc-4.0, beanValidation-1.0, jpa-2.0].
+[9/12/17 11:27:38:332 EDT] 0000001b com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0008I: Feature update completed in 40.286 seconds.
+[9/12/17 11:27:38:332 EDT] 0000001b com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0011I: The server defaultServer is ready to run a smarter planet.
+[9/12/17 11:28:14:063 EDT] 0000001f com.ibm.ws.session.WASSessionCore                            I SESN8501I: The session manager did not find a persistent storage location; HttpSession objects will be stored in the local application server's memory.
+[9/12/17 11:28:14:094 EDT] 0000001f com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: USCS.eWMS.
+[9/12/17 11:28:14:094 EDT] 0000001f com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module USCS.eWMS has been bound to default_host.
+[9/12/17 11:28:14:110 EDT] 0000001f com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://192.168.56.1:9081/web/
+[9/12/17 11:28:14:116 EDT] 0000001f com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application web started in 65.837 seconds.
+[9/12/17 11:28:14:629 EDT] 00000038 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at C:\EWM_\EWM-BE-SERVER\usr\servers\defaultServer\logs\state\plugin-cfg.xml.
+[9/12/17 11:28:19:054 EDT] 00000035 com.ibm.ws.injectionengine.AbstractInjectionEngine           W CWNEN0070W: The javax.persistence.PersistenceUnit annotation class will not be recognized because it was loaded from the file:/C:/Users/hqmmande/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.1.Final/hibernate-jpa-2.0-api-1.0.1.Final.jar location rather than from a product class loader.
+[9/12/17 11:28:19:061 EDT] 00000035 com.ibm.ws.injectionengine.AbstractInjectionEngine           W CWNEN0070W: The javax.persistence.PersistenceContext annotation class will not be recognized because it was loaded from the file:/C:/Users/hqmmande/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.1.Final/hibernate-jpa-2.0-api-1.0.1.Final.jar location rather than from a product class loader.
+[9/12/17 11:28:19:259 EDT] 00000035 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/web
+[9/12/17 11:28:19:327 EDT] 00000035 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[9/12/17 11:28:20:338 EDT] 00000035 com.ibm.ws.webcontainer.webapp                               I SRVE0292I: Servlet Message - [web]:.No Spring WebApplicationInitializer types detected on classpath
+[9/12/17 11:28:20:412 EDT] 00000035 SystemOut                                                    O log4j: Using URL [file:C:/EWM_/EWM-BE-SERVER/eWMSLog/log4j.properties] for automatic log4j configuration.
+[9/12/17 11:28:20:418 EDT] 00000035 SystemOut                                                    O log4j: Reading configuration from URL file:C:/EWM_/EWM-BE-SERVER/eWMSLog/log4j.properties
+[9/12/17 11:28:20:425 EDT] 00000035 SystemOut                                                    O log4j: Parsing for [root] with value=[INFO].
+[9/12/17 11:28:20:426 EDT] 00000035 SystemOut                                                    O log4j: Level token is [INFO].
+[9/12/17 11:28:20:426 EDT] 00000035 SystemOut                                                    O log4j: Category root set to INFO
+[9/12/17 11:28:20:428 EDT] 00000035 SystemOut                                                    O log4j: Parsing for [org.springframework] with value=[INFO,eWMSFileAppender].
+[9/12/17 11:28:20:428 EDT] 00000035 SystemOut                                                    O log4j: Level token is [INFO].
+[9/12/17 11:28:20:429 EDT] 00000035 SystemOut                                                    O log4j: Category org.springframework set to INFO
+[9/12/17 11:28:20:429 EDT] 00000035 SystemOut                                                    O log4j: Parsing appender named "eWMSFileAppender".
+[9/12/17 11:28:20:452 EDT] 00000035 SystemOut                                                    O log4j: Parsing layout options for "eWMSFileAppender".
+[9/12/17 11:28:20:477 EDT] 00000035 SystemOut                                                    O log4j: Setting property [conversionPattern] to [[%X{userName}] [%d{ISO8601}] [%t] [%p] %m (%F:%L)%n].
+[9/12/17 11:28:20:479 EDT] 00000035 SystemOut                                                    O log4j: End of parsing for "eWMSFileAppender".
+[9/12/17 11:28:20:504 EDT] 00000035 SystemOut                                                    O log4j: Setting property [append] to [true].
+[9/12/17 11:28:20:504 EDT] 00000035 SystemOut                                                    O log4j: Setting property [maxBackupIndex] to [10].
+[9/12/17 11:28:20:504 EDT] 00000035 SystemOut                                                    O log4j: Setting property [maxFileSize] to [5MB].
+[9/12/17 11:28:20:505 EDT] 00000035 SystemOut                                                    O log4j: Setting property [file] to [C:\eWMS\eWMSLog\eWMS.log].
+[9/12/17 11:28:20:505 EDT] 00000035 SystemOut                                                    O log4j: setFile called: C:\eWMS\eWMSLog\eWMS.log, true
+[9/12/17 11:28:20:506 EDT] 00000035 SystemOut                                                    O log4j: setFile ended
+[9/12/17 11:28:20:507 EDT] 00000035 SystemOut                                                    O log4j: Parsed "eWMSFileAppender" options.
+[9/12/17 11:28:20:509 EDT] 00000035 SystemOut                                                    O log4j: Handling log4j.additivity.org.springframework=[null]
+[9/12/17 11:28:20:509 EDT] 00000035 SystemOut                                                    O log4j: Parsing for [com.uscs.ewms.mdm] with value=[INFO,MDMFileAppender].
+[9/12/17 11:28:20:509 EDT] 00000035 SystemOut                                                    O log4j: Level token is [INFO].
+[9/12/17 11:28:20:509 EDT] 00000035 SystemOut                                                    O log4j: Category com.uscs.ewms.mdm set to INFO
+[9/12/17 11:28:20:509 EDT] 00000035 SystemOut                                                    O log4j: Parsing appender named "MDMFileAppender".
+[9/12/17 11:28:20:510 EDT] 00000035 SystemOut                                                    O log4j: Parsing layout options for "MDMFileAppender".
+[9/12/17 11:28:20:510 EDT] 00000035 SystemOut                                                    O log4j: Setting property [conversionPattern] to [[%X{userName}] [%d{ISO8601}] [%t] [%p] %m (%F:%L)%n].
+[9/12/17 11:28:20:510 EDT] 00000035 SystemOut                                                    O log4j: End of parsing for "MDMFileAppender".
+[9/12/17 11:28:20:511 EDT] 00000035 SystemOut                                                    O log4j: Setting property [file] to [C:\eWMS\eWMSLog\eWMS-MDM.log].
+[9/12/17 11:28:20:511 EDT] 00000035 SystemOut                                                    O log4j: Setting property [maxFileSize] to [5MB].
+[9/12/17 11:28:20:511 EDT] 00000035 SystemOut                                                    O log4j: Setting property [append] to [true].
+[9/12/17 11:28:20:511 EDT] 00000035 SystemOut                                                    O log4j: Setting property [maxBackupIndex] to [10].
+[9/12/17 11:28:20:512 EDT] 00000035 SystemOut                                                    O log4j: setFile called: C:\eWMS\eWMSLog\eWMS-MDM.log, true
+[9/12/17 11:28:20:513 EDT] 00000035 SystemOut                                                    O log4j: setFile ended
+[9/12/17 11:28:20:513 EDT] 00000035 SystemOut                                                    O log4j: Parsed "MDMFileAppender" options.
+[9/12/17 11:28:20:514 EDT] 00000035 SystemOut                                                    O log4j: Handling log4j.additivity.com.uscs.ewms.mdm=[null]
+[9/12/17 11:28:20:516 EDT] 00000035 SystemOut                                                    O log4j: Parsing for [com.uscs.ewms.logging] with value=[INFO,eWMSFileAppender].
+[9/12/17 11:28:20:516 EDT] 00000035 SystemOut                                                    O log4j: Level token is [INFO].
+[9/12/17 11:28:20:517 EDT] 00000035 SystemOut                                                    O log4j: Category com.uscs.ewms.logging set to INFO
+[9/12/17 11:28:20:517 EDT] 00000035 SystemOut                                                    O log4j: Parsing appender named "eWMSFileAppender".
+[9/12/17 11:28:20:517 EDT] 00000035 SystemOut                                                    O log4j: Appender "eWMSFileAppender" was already parsed.
+[9/12/17 11:28:20:517 EDT] 00000035 SystemOut                                                    O log4j: Handling log4j.additivity.com.uscs.ewms.logging=[null]
+[9/12/17 11:28:20:518 EDT] 00000035 SystemOut                                                    O log4j: Finished configuring.
+[9/12/17 11:28:20:556 EDT] 00000035 com.ibm.ws.webcontainer.webapp                               I SRVE0292I: Servlet Message - [web]:.Initializing Spring root WebApplicationContext
+[9/12/17 11:28:23:230 EDT] 00000035 com.ibm.ws.jca.cm.ConnectorService                           I J2CA8050I: An authentication alias should be used instead of defining a user name and password on dataSource[EWMSDataSource].
+[9/12/17 11:28:23:891 EDT] 00000035 com.ibm.ws.recoverylog.spi.RecoveryDirectorImpl              I CWRLS0010I: Performing recovery processing for local WebSphere server (defaultServer).
+[9/12/17 11:28:24:116 EDT] 00000035 com.ibm.ws.recoverylog.spi.RecoveryDirectorImpl              I CWRLS0012I: All persistent services have been directed to perform recovery processing for this WebSphere server (defaultServer).
+[9/12/17 11:28:24:116 EDT] 0000003b com.ibm.tx.jta.impl.RecoveryManager                          I WTRN0135I: Transaction service recovering no transactions.
+[9/12/17 11:28:24:174 EDT] 00000035 com.ibm.ws.jca.cm.ConnectorService                           I J2CA8050I: An authentication alias should be used instead of defining a user name and password on dataSource[WMS1DataSource].
+[9/12/17 11:28:24:195 EDT] 00000035 com.ibm.ws.jca.cm.ConnectorService                           I J2CA8050I: An authentication alias should be used instead of defining a user name and password on dataSource[WMS2DataSource].
+[9/12/17 11:28:24:212 EDT] 00000035 com.ibm.ws.jca.cm.ConnectorService                           I J2CA8050I: An authentication alias should be used instead of defining a user name and password on dataSource[WMS3DataSource].
+[9/12/17 11:28:24:225 EDT] 00000035 com.ibm.ws.jca.cm.ConnectorService                           I J2CA8050I: An authentication alias should be used instead of defining a user name and password on dataSource[EUSDataSource].
+[9/12/17 11:28:24:247 EDT] 00000035 com.ibm.ws.jca.cm.ConnectorService                           I J2CA8050I: An authentication alias should be used instead of defining a user name and password on dataSource[ediDataSource].
+[9/12/17 11:28:24:261 EDT] 00000035 com.ibm.ws.jca.cm.ConnectorService                           I J2CA8050I: An authentication alias should be used instead of defining a user name and password on dataSource[CSUATDataSource].
+[9/12/17 11:28:24:273 EDT] 00000035 com.ibm.ws.jca.cm.ConnectorService                           I J2CA8050I: An authentication alias should be used instead of defining a user name and password on dataSource[CSPRDDataSource].
+[9/12/17 11:28:25:605 EDT] 0000003b com.ibm.ws.rsadapter.impl.DatabaseHelper                     I DSRA8203I: Database product name : DB2 UDB for AS/400
+[9/12/17 11:28:25:607 EDT] 0000003b com.ibm.ws.rsadapter.impl.DatabaseHelper                     I DSRA8204I: Database product version : 07.03.0000 V7R3m0
+[9/12/17 11:28:25:605 EDT] 00000035 com.ibm.ws.rsadapter.impl.DatabaseHelper                     I DSRA8203I: Database product name : DB2 UDB for AS/400
+[9/12/17 11:28:25:607 EDT] 0000003b com.ibm.ws.rsadapter.impl.DatabaseHelper                     I DSRA8205I: JDBC driver name  : AS/400 Toolbox for Java JDBC Driver
+[9/12/17 11:28:25:607 EDT] 00000035 com.ibm.ws.rsadapter.impl.DatabaseHelper                     I DSRA8204I: Database product version : 07.03.0000 V7R3m0
+[9/12/17 11:28:25:607 EDT] 0000003b com.ibm.ws.rsadapter.impl.DatabaseHelper                     I DSRA8206I: JDBC driver version  : 11.3
+[9/12/17 11:28:25:607 EDT] 00000035 com.ibm.ws.rsadapter.impl.DatabaseHelper                     I DSRA8205I: JDBC driver name  : AS/400 Toolbox for Java JDBC Driver
+[9/12/17 11:28:25:607 EDT] 00000035 com.ibm.ws.rsadapter.impl.DatabaseHelper                     I DSRA8206I: JDBC driver version  : 11.3
+[9/12/17 11:28:26:434 EDT] 00000035 SystemErr                                                    R log4j:WARN No appenders could be found for logger (org.hibernate.annotations.common.Version).
+[9/12/17 11:28:26:434 EDT] 00000035 SystemErr                                                    R log4j:WARN Please initialize the log4j system properly.
+[9/12/17 11:28:37:483 EDT] 00000035 com.ibm.ws.rsadapter.impl.DatabaseHelper                     I DSRA8203I: Database product name : DB2 UDB for AS/400
+[9/12/17 11:28:37:484 EDT] 00000035 com.ibm.ws.rsadapter.impl.DatabaseHelper                     I DSRA8204I: Database product version : 07.03.0000 V7R3m0
+[9/12/17 11:28:37:484 EDT] 00000035 com.ibm.ws.rsadapter.impl.DatabaseHelper                     I DSRA8205I: JDBC driver name  : AS/400 Toolbox for Java JDBC Driver
+[9/12/17 11:28:37:484 EDT] 00000035 com.ibm.ws.rsadapter.impl.DatabaseHelper                     I DSRA8206I: JDBC driver version  : 11.3
+[9/12/17 11:28:39:652 EDT] 00000035 com.ibm.ws.webcontainer.webapp                               I SRVE0292I: Servlet Message - [web]:.Initializing Spring FrameworkServlet 'ewms'
+[9/12/17 11:29:32:047 EDT] 00000035 SystemOut                                                    O QueryImpl(DELETE FROM AppLock WHERE createTs < :time)
+[9/12/17 11:29:58:389 EDT] 00000035 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [web] [/web] [ewms]: Initialization successful.
+[9/12/17 11:30:00:005 EDT] 0000007f SystemOut                                                    O QueryImpl(DELETE FROM AppLock WHERE createTs < :time)
+[9/12/17 11:30:03:727 EDT] 00000080 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [web] [/web] [/WEB-INF/jsp/Login.jsp]: Initialization successful.
+[9/12/17 11:30:23:411 EDT] 0000005d com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [web] [/web] [/WEB-INF/jsp/Home/Home.jsp]: Initialization successful.
+[9/12/17 11:30:52:511 EDT] 00000076 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [web] [/web] [/WEB-INF/jsp/receiving/profileAssignment/profileAssignmentSearch.jsp]: Initialization successful.
+[9/12/17 11:30:52:724 EDT] 00000076 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [web] [/web] [/WEB-INF/jsp/Common/export-popup-without-options.jsp]: Initialization successful.
+[9/12/17 11:30:52:863 EDT] 00000076 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [web] [/web] [/WEB-INF/jsp/Common/error_warning_popup.jsp]: Initialization successful.
+[9/12/17 12:00:00:006 EDT] 0000007f SystemOut                                                    O QueryImpl(DELETE FROM AppLock WHERE createTs < :time)
+[9/12/17 12:29:59:996 EDT] 0000007f SystemOut                                                    O QueryImpl(DELETE FROM AppLock WHERE createTs < :time)
+[9/12/17 13:00:00:015 EDT] 0000007f SystemOut                                                    O QueryImpl(DELETE FROM AppLock WHERE createTs < :time)
